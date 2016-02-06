@@ -86,4 +86,9 @@ router.get('/loginsuccess', function(req, res, next) {
   res.redirect("/userpage");
 });
 
+router.get('/userpage', function(req, res, next) {
+  res.send('really successful!');
+  //TODO: get info from http://www.chuangxue.org/users/jade.json
+});
+
 module.exports = router;
