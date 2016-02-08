@@ -2,15 +2,8 @@ const express = require('express');
 const crypto = require('crypto');
 const url = require('url');
 const uuid = require('node-uuid');
-const session = require('express-session');
 
 const router = express.Router();
-
-router.use(session({
-  genid: uuid.v1,
-  secret: '1kep_-a',
-  cookie: { maxAge: 60000 }
-}));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
