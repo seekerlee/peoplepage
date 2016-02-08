@@ -3,6 +3,8 @@ const crypto = require('crypto');
 const url = require('url');
 const uuid = require('node-uuid');
 
+const userStore = require('../libs/user-store');
+
 const router = express.Router();
 
 /* GET home page. */
@@ -26,7 +28,7 @@ router.get('/login', function(req, res, next) {
 
    Send auth request to Discourse
    Redirect the user to DISCOURSE_ROOT_URL/session/sso_provider?sso=URL_ENCODED_PAYLOAD&sig=HEX_SIGNATURE
-   */
+  */
   const nonce = uuid.v4();
   req.session.nonce = nonce;
   const returnUrl = "http://localhost:3000/loginsuccess";
@@ -80,8 +82,13 @@ router.get('/loginsuccess', function(req, res, next) {
 });
 
 router.get('/userpage', function(req, res, next) {
-  res.send('really successful!');
-  //TODO: get info from http://www.chuangxue.org/users/jade.json
+  // 1. get my info from
+  //    http://www.chuangxue.org/users/jade.json
+
+  // 2. get active user info from
+  //    http://www.chuangxue.org/admin/users/list/active.json?api_key=ca70057f73c5f9635a731cfd98878b9a4b8b7a8665248b11f28a3a81caf234c2&api_username=seeker
+  res.send(JSON.stringify(userStore.activeUsers));
+  //TODO: get info from
 });
 
 module.exports = router;

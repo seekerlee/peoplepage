@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const session = require('express-session');
 const uuid = require('node-uuid');
+const userStore = require('./libs/user-store');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -31,7 +32,7 @@ app.use(session({
 }));
 
 app.use('/', routes);
-app.use('/users', users);
+//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
