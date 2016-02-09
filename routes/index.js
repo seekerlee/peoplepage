@@ -87,8 +87,9 @@ router.get('/userpage', function(req, res, next) {
 
   // 2. get active user info from
   //    http://www.chuangxue.org/admin/users/list/active.json?api_key=ca70057f73c5f9635a731cfd98878b9a4b8b7a8665248b11f28a3a81caf234c2&api_username=seeker
-  res.send(JSON.stringify(userStore.activeUsers));
-  //TODO: get info from
+
+  res.render('people', { activeUsers: userStore.activeUsers, rootUrl : "http://www.chuangxue.org" });
+
 });
 
 module.exports = router;

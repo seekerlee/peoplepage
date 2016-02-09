@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="/mdl/material.min.css">
+    <script src="/mdl/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout-icon"></div>
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout__title">Simple Layout</span>
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    </header>
+
+    <main class="mdl-layout__content">
+        <p>Content</p>
+        <p>Goes</p>
+        <p>Here</p>
+
+        <%
+        for(var i = 0; i < activeUsers.length; i ++) {
+            var oneuser = activeUsers[i];
+            if(oneuser['id'] == -1) {
+                continue;
+            }
+            var avatarSrc = oneuser['avatar_template'];
+            if(avatarSrc) {
+                oneuser['avatar_template'] = avatarSrc.replace("{size}", "64");
+            }
+        %>
+        <img src="<%= rootUrl + oneuser['avatar_template']%>">
+        <% }%>
+    </main>
+</div>
+
+</body>
+</html>
