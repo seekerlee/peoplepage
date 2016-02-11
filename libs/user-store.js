@@ -64,7 +64,10 @@ function getActiveUsers(callback) {
 
             try {
                 var json = JSON.parse(body);
-                if (json) return callback(null, json);
+                if (json) {
+                    // do a lot o things here
+                    return callback(null, json);
+                }
                 else return callback(null, null);
             }
             catch (err) {
