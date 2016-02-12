@@ -28,6 +28,13 @@
             margin-bottom: -83px;
             padding: 16px;
         }
+        .user-info .mdl-card__title-text {
+            display: block;
+        }
+        .profile-bg {
+            background-size: cover;
+            height: 200px;
+        }
     </style>
 </head>
 <body>
@@ -43,34 +50,40 @@
     <main class="mdl-layout__content">
         <div class="card-container">
             <%
-            for(var i = 0; i < activeUsers.length; i ++) {
-                var oneuser = activeUsers[i];
-                if(oneuser['id'] == -1) {
-                    continue;
+            userDetails.forEach(function(userJson, key) {
+                /**
+                 * Returns a random integer between min (inclusive) and max (inclusive)
+                 * Using Math.round() will give you a non-uniform distribution!
+                 */
+                function getRandomInt(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
                 }
-                var avatarSrc = oneuser['avatar_template'];
-                if(avatarSrc) {
-                    oneuser['avatar_template'] = avatarSrc.replace("{size}", "128");
+                userJson.avatar128 = userJson.avatar_template.replace("{size}", "128");
+                var backgroundImg;
+                if (userJson.card_background) {
+                    backgroundImg = rootUrl + userJson.card_background
+                } else {
+                    backgroundImg = "/images/mountain" + getRandomInt(0, 4) + ".png"
                 }
             %>
             <div class="mdl-card mdl-shadow--4dp card">
-                <div class="profile-bg" style="height: 160px; background-color: blueviolet;">
+                <div class="profile-bg" style=" background-image: url('<%= backgroundImg %>')">
                 </div>
                 <div class="avatar-wrapper">
-                    <img class="avatar" src="<%= rootUrl + oneuser['avatar_template']%>">
+                    <img class="avatar" src="<%= rootUrl + userJson['avatar128']%>">
                 </div>
                 <div class="user-info">
-                    <h2 class="mdl-card__title-text"><%= oneuser['username'] %></h2>
-                </div>
-                <div class="mdl-card__supporting-text">
-
+                    <h2 class="mdl-card__title-text"><%= userJson['name'] %></h2>
                 </div>
                 <div class="mdl-card__actions">
                     <a href="(URL or function)">Related Action</a>
                 </div>
+                <div class="mdl-card__supporting-text">
+                    <span><%= userJson['bio'] %></span>
+                </div>
             </div>
             <%
-            }
+            });
             %>
         </div>
     </main>

@@ -81,14 +81,14 @@ router.get('/loginsuccess', function(req, res, next) {
   res.redirect("/userpage");
 });
 
-router.get('/userpage', function(req, res, next) {
+router.get('/people', function(req, res, next) {
   // 1. get my info from
   //    http://www.chuangxue.org/users/jade.json
 
   // 2. get active user info from
   //    http://www.chuangxue.org/admin/users/list/active.json?api_key=ca70057f73c5f9635a731cfd98878b9a4b8b7a8665248b11f28a3a81caf234c2&api_username=seeker
 
-  res.render('people', { activeUsers: userStore.activeUsers, rootUrl : "http://www.chuangxue.org" });
+  res.render('people', { userDetails: userStore.userDetails, rootUrl : "http://www.chuangxue.org" });
 
 });
 
