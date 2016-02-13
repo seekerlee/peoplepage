@@ -18,7 +18,10 @@ function getDiscourseData(url, parameters, callback) {
         '&' + querystring.stringify(parameters);
 
     request.get({
-            url: getUrl
+            url: getUrl,
+            forever: true,
+            timeout: 5000,
+            agentOptions: {maxSockets : 6}
         },
         function(error, response, body) {
 
@@ -30,7 +33,8 @@ function getDiscourseData(url, parameters, callback) {
             }
 
             callback(error, body || {}, response != null ? response.statusCode : null);
-
+            console.log(getUrl);
+            console.log(body);
         }
     );
 }
@@ -71,10 +75,15 @@ function getActiveUsers(callback) {
                     json.forEach(function(oneUser){
                         var username = oneUser['username'];
                         getSingleUserInfo(username, function(err, userDetail){
-                            if (err || userDetail.user.id == -1) {
+                            if (err) {
+                                console.error(err);
+                                return;
+                            }
+                            if(userDetail.user.id == -1) {
                                 return;
                             }
                             let userJson = {};
+                            userDetails.set(username, userJson);
                             userJson.name = userDetail.user.name || userDetail.user.username;
                             userJson.avatar_template = userDetail.user.avatar_template;
                             if (userDetail.user.card_background) {
@@ -84,8 +93,25 @@ function getActiveUsers(callback) {
                                 userJson.bio = userDetail.user.bio_raw;
                             }
                             userJson.email = userDetail.user.email;
-                            userDetails.set(username, userJson);
+                            // badges
+                            if(userDetail.badges) {
+                                let badges = [];
+                                userDetail.badges.forEach(function(oneBadge) {
+                                    if(oneBadge.enabled !== true) {
+                                        return;
+                                    }
+                                    badges.push({
+                                        id: oneBadge.id,
+                                        name: oneBadge.name,
+                                        description: oneBadge.description,
+                                        icon: oneBadge.icon,
+                                        type: oneBadge.badge_type_id
+                                    })
+                                });
+                                userJson.badges = badges;
+                            }
                             console.info("set user info: " + username);
+                            //console.info(userDetail);
                         });
                     });
 
@@ -94,6 +120,7 @@ function getActiveUsers(callback) {
                 else return callback(null, null);
             }
             catch (err) {
+                console.error("something happened");
                 return callback(err, null);
             }
 
@@ -108,8 +135,7 @@ console.log("-----------------");
 getActiveUsers(function(err, json){
 });
 setInterval(function(){
-    getActiveUsers(function(err, json){
-    });
+    //getActiveUsers(function(err, json){});
 }, 30 * 1000);
 
 module.exports = exportV;

@@ -4,7 +4,8 @@
     <title></title>
     <link rel="stylesheet" href="/mdl/material.min.css">
     <script src="/mdl/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <style type="text/css">
         .avatar {
             border-radius: 50%;
@@ -35,6 +36,36 @@
             background-size: cover;
             height: 200px;
         }
+        .badge-type-bronze .fa{
+            color: #cd7f32;
+        }
+        .badge-type-silver .fa{
+            color: silver;
+        }
+        .badge-type-gold .fa{
+            color: gold;
+        }
+        .user-badge {
+            font-size: .8rem;
+            border: 1px solid;
+            border-radius: 3px;
+            padding: 2px;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            margin: 0 2px;
+            cursor: default;
+            white-space: nowrap;
+        }
+        .badge-type-bronze {
+            border-color: #cd7f32;
+        }
+        .badge-type-silver {
+            border-color: silver;
+        }
+        .badge-type-gold {
+            border-color: gold;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +82,7 @@
         <div class="card-container">
             <%
             userDetails.forEach(function(userJson, key) {
+                "use strict"
                 /**
                  * Returns a random integer between min (inclusive) and max (inclusive)
                  * Using Math.round() will give you a non-uniform distribution!
@@ -75,8 +107,35 @@
                 <div class="user-info">
                     <h2 class="mdl-card__title-text"><%= userJson['name'] %></h2>
                 </div>
-                <div class="mdl-card__actions">
-                    <a href="(URL or function)">Related Action</a>
+
+                <div class="user-badges">
+                    <%
+                    if(userJson.badges) {
+                        userJson.badges.forEach(function(oneBadge) {
+                            let badgeTypeClass;
+                            switch (oneBadge.type) {
+                                case 1:
+                                    badgeTypeClass = "badge-type-gold";
+                                    break;
+                                case 2:
+                                    badgeTypeClass = "badge-type-silver";
+                                    break;
+                                case 3:
+                                    badgeTypeClass = "badge-type-bronze";
+                                    break;
+                                default:
+                                    badgeTypeClass = "badge-type-bronze";
+                                    break;
+                            }
+                    %>
+                    <span class="user-badge <%= badgeTypeClass %>" title="<%= oneBadge.description %>">
+                        <i class="fa <%= oneBadge.icon %>"></i>
+                        <span class="badge-desc"><%= oneBadge.name %></span>
+                    </span>
+                    <%
+                        });
+                    }
+                    %>
                 </div>
                 <div class="mdl-card__supporting-text">
                     <span><%= userJson['bio'] %></span>
