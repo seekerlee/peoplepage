@@ -56,6 +56,9 @@
             margin: 0 2px;
             cursor: default;
             white-space: nowrap;
+            position: relative;
+            display:inline-block;
+            overflow: hidden;
         }
         .badge-type-bronze {
             border-color: #cd7f32;
@@ -65,6 +68,42 @@
         }
         .badge-type-gold {
             border-color: gold;
+        }
+        .user-badge:after {
+            content: "";
+            position: absolute;
+            top: -110%;
+            left: -210%;
+            width: 200%;
+            height: 200%;
+            opacity: 0;
+            transform: rotate(10deg);
+
+            background: rgba(255, 255, 255, 0.13);
+            background: linear-gradient(
+                    to right,
+                    rgba(255, 255, 255, 0.13) 0%,
+                    rgba(255, 255, 255, 0.13) 67%,
+                    rgba(255, 255, 255, 0.8) 92%,
+                    rgba(255, 255, 255, 0.0) 100%
+            );
+        }
+
+        /* Hover state - trigger effect */
+
+        .user-badge:hover:after {
+            opacity: 1;
+            top: -30%;
+            left: -30%;
+            transition-property: left, top, opacity;
+            transition-duration: 0.7s, 0.7s, 0.15s;
+            transition-timing-function: ease;
+        }
+
+        /* Active state */
+
+        .user-badge:active:after {
+            opacity: 0;
         }
     </style>
 </head>
@@ -128,7 +167,7 @@
                                     break;
                             }
                     %>
-                    <span class="user-badge <%= badgeTypeClass %>" title="<%= oneBadge.description %>">
+                    <span class="user-badge shine <%= badgeTypeClass %>" title="<%= oneBadge.description %>">
                         <i class="fa <%= oneBadge.icon %>"></i>
                         <span class="badge-desc"><%= oneBadge.name %></span>
                     </span>

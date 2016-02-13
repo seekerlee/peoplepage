@@ -89,12 +89,15 @@ function getActiveUsers(callback) {
                             if (userDetail.user.card_background) {
                                 userJson.card_background = userDetail.user.card_background;
                             }
-                            if(userDetail.user.bio_raw) {
+                            if (userDetail.user.bio_raw) {
                                 userJson.bio = userDetail.user.bio_raw;
+                            }
+                            if (userDetail.user.website) {
+                                userJson.website = userDetail.user.website;
                             }
                             userJson.email = userDetail.user.email;
                             // badges
-                            if(userDetail.badges) {
+                            if (userDetail.badges) {
                                 let badges = [];
                                 userDetail.badges.forEach(function(oneBadge) {
                                     if(oneBadge.enabled !== true) {
@@ -109,6 +112,18 @@ function getActiveUsers(callback) {
                                     })
                                 });
                                 userJson.badges = badges;
+                            }
+                            if (userDetail.user_fields) {
+                                let uf = userDetail.user_fields;
+                                if(uf['1']) {
+                                    userJson.linkedin = uf['1'];
+                                }
+                                if(uf['2']) {
+                                    userJson.weibo = uf['2'];
+                                }
+                                if(uf['3']) {
+                                    userJson.wechat = uf['3'];
+                                }
                             }
                             console.info("set user info: " + username);
                             //console.info(userDetail);
