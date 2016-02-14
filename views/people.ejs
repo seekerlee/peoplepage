@@ -105,6 +105,32 @@
         .user-badge:active:after {
             opacity: 0;
         }
+
+        .user-links {
+            padding: 16px;
+        }
+        .user-links a {
+            padding: 0 3px;
+            font-size: 1.3rem;
+            color: #555555;
+            -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            -o-transition: all 0.1s ease-in-out;
+            -ms-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+        }
+        .user-links .linkedin:hover {
+            color: #0976b4;
+        }
+        .user-links .weibo:hover {
+            color: #e6162d;
+        }
+        .user-links .wechat:hover {
+            color: rgb(129,224,86);;
+        }
+        .user-links .email:hover {
+            color: rgb(255,230,129);
+        }
     </style>
 </head>
 <body>
@@ -146,7 +172,22 @@
                 <div class="user-info">
                     <h2 class="mdl-card__title-text"><%= userJson['name'] %></h2>
                 </div>
-
+                <div class="user-links">
+                    <% if(userJson.linkedin) { %>
+                    <a class="linkedin" href="<%= userJson.linkedin %>" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <%}%>
+                    <% if(userJson.weibo) { %>
+                    <a class="weibo" href="<%= userJson.weibo %>" target="_blank"><i class="fa fa-weibo"></i></a>
+                    <%}%>
+                    <% if(userJson.wechat) { %>
+                    <a class="wechat" id="wechat-<%=userJson.id%>"><i class="fa fa-wechat"></i></a>
+                    <span class="mdl-tooltip mdl-tooltip--top" for="wechat-<%=userJson.id%>"><%=userJson.wechat%></span>
+                    <%}%>
+                    <% if(userJson.wechat) { %>
+                    <a class="email" id="email-<%=userJson.id%>"><i class="fa fa-envelope"></i></a>
+                    <span class="mdl-tooltip mdl-tooltip--top" for="email-<%=userJson.id%>"><%=userJson.email%></span>
+                    <%}%>
+                </div>
                 <div class="user-badges">
                     <%
                     if(userJson.badges) {

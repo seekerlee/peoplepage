@@ -84,6 +84,7 @@ function getActiveUsers(callback) {
                             }
                             let userJson = {};
                             userDetails.set(username, userJson);
+                            userJson.id = userDetail.user.id;
                             userJson.name = userDetail.user.name || userDetail.user.username;
                             userJson.avatar_template = userDetail.user.avatar_template;
                             if (userDetail.user.card_background) {
@@ -95,7 +96,7 @@ function getActiveUsers(callback) {
                             if (userDetail.user.website) {
                                 userJson.website = userDetail.user.website;
                             }
-                            userJson.email = userDetail.user.email;
+                            //userJson.email = userDetail.user.email;
                             // badges
                             if (userDetail.badges) {
                                 let badges = [];
@@ -113,8 +114,8 @@ function getActiveUsers(callback) {
                                 });
                                 userJson.badges = badges;
                             }
-                            if (userDetail.user_fields) {
-                                let uf = userDetail.user_fields;
+                            if (userDetail.user.user_fields) {
+                                let uf = userDetail.user.user_fields;
                                 if(uf['1']) {
                                     userJson.linkedin = uf['1'];
                                 }
@@ -123,6 +124,9 @@ function getActiveUsers(callback) {
                                 }
                                 if(uf['3']) {
                                     userJson.wechat = uf['3'];
+                                }
+                                if(uf['4']) {
+                                    userJson.email = uf['4'];
                                 }
                             }
                             console.info("set user info: " + username);
