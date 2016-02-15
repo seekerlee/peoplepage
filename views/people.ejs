@@ -13,6 +13,14 @@
             height: 128px;
             width: 128px;
         }
+        .avatar:hover {
+            transform: rotate(360deg);
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            -o-transition: all 0.1s ease-in-out;
+            -ms-transition: all 0.1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
         .card-container {
             display: flex;
             justify-content: center;
@@ -27,7 +35,7 @@
             position: relative;
             top: -83px;
             margin-bottom: -83px;
-            padding: 16px;
+            padding: 8px 16px;
         }
         .user-info .mdl-card__title-text {
             display: block;
@@ -45,19 +53,24 @@
         .badge-type-gold .fa{
             color: gold;
         }
+        .user-badges {
+            display: flex;
+            justify-content: center;
+            align-content: space-around;
+            padding: 4px 0;
+        }
         .user-badge {
             font-size: .8rem;
             border: 1px solid;
             border-radius: 3px;
             padding: 2px;
+            margin: 4px 5px;
             -moz-user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
-            margin: 0 2px;
             cursor: default;
             white-space: nowrap;
             position: relative;
-            display:inline-block;
             overflow: hidden;
         }
         .badge-type-bronze {
@@ -107,12 +120,15 @@
         }
 
         .user-links {
-            padding: 16px;
+            padding:8px 16px;
+            display: flex;
+            justify-content: center;
         }
         .user-links a {
-            padding: 0 3px;
+            padding: 0 4px;
             font-size: 1.3rem;
             color: #555555;
+            display: inline-block;
             -webkit-transition: all 0.1s ease-in-out;
             -moz-transition: all 0.1s ease-in-out;
             -o-transition: all 0.1s ease-in-out;
@@ -125,23 +141,38 @@
         .user-links .weibo:hover {
             color: #e6162d;
         }
+        .user-links .wechat {
+            font-size: 1.2rem;
+        }
         .user-links .wechat:hover {
-            color: rgb(129,224,86);;
+            color: rgb(129,224,86);
+        }
+        .user-links .email {
+            font-size: 1.2rem;
         }
         .user-links .email:hover {
             color: rgb(255,230,129);
         }
+        .user-links .website:hover {
+            color: rgb(64,133,244);
+        }
+
+        .user-links a:hover {
+            margin: 0 9px;
+            transform:scale(2,2); /* W3C */
+            -webkit-transform:scale(2,2); /* Safari and Chrome */
+            -moz-transform:scale(2,2); /* Firefox */
+            -ms-transform:scale(2,2); /* IE 9 */
+            -o-transform:scale(2,2); /* Opera */
+        }
+
+        .user-bio {
+            padding: 8px 16px 16px 16px;
+        }
     </style>
 </head>
 <body>
-<div class="mdl-layout mdl-js-layout">
-    <header class="mdl-layout__header">
-        <div class="mdl-layout-icon"></div>
-        <div class="mdl-layout__header-row">
-            <span class="mdl-layout__title">Simple Layout</span>
-            <div class="mdl-layout-spacer"></div>
-        </div>
-    </header>
+<div class="mdl-layout">
 
     <main class="mdl-layout__content">
         <div class="card-container">
@@ -172,6 +203,7 @@
                 <div class="user-info">
                     <h2 class="mdl-card__title-text"><%= userJson['name'] %></h2>
                 </div>
+                <% if (userJson.linkedin || userJson.weibo || userJson.wechat || userJson.email || userJson.website) {%>
                 <div class="user-links">
                     <% if(userJson.linkedin) { %>
                     <a class="linkedin" href="<%= userJson.linkedin %>" target="_blank"><i class="fa fa-linkedin"></i></a>
@@ -183,41 +215,47 @@
                     <a class="wechat" id="wechat-<%=userJson.id%>"><i class="fa fa-wechat"></i></a>
                     <span class="mdl-tooltip mdl-tooltip--top" for="wechat-<%=userJson.id%>"><%=userJson.wechat%></span>
                     <%}%>
-                    <% if(userJson.wechat) { %>
+                    <% if(userJson.email) { %>
                     <a class="email" id="email-<%=userJson.id%>"><i class="fa fa-envelope"></i></a>
                     <span class="mdl-tooltip mdl-tooltip--top" for="email-<%=userJson.id%>"><%=userJson.email%></span>
                     <%}%>
+                    <% if(userJson.website) { %>
+                    <a class="website" id="website-<%=userJson.id%>" href="<%=userJson.website%>" target="_blank"><i class="fa fa-home"></i></a>
+                    <span class="mdl-tooltip mdl-tooltip--top" for="website-<%=userJson.id%>"><%=userJson.website%></span>
+                    <%}%>
                 </div>
+                <%}
+                if(userJson.badges) {
+                %>
                 <div class="user-badges">
                     <%
-                    if(userJson.badges) {
-                        userJson.badges.forEach(function(oneBadge) {
-                            let badgeTypeClass;
-                            switch (oneBadge.type) {
-                                case 1:
-                                    badgeTypeClass = "badge-type-gold";
-                                    break;
-                                case 2:
-                                    badgeTypeClass = "badge-type-silver";
-                                    break;
-                                case 3:
-                                    badgeTypeClass = "badge-type-bronze";
-                                    break;
-                                default:
-                                    badgeTypeClass = "badge-type-bronze";
-                                    break;
-                            }
+                    userJson.badges.forEach(function(oneBadge) {
+                        let badgeTypeClass;
+                        switch (oneBadge.type) {
+                            case 1:
+                                badgeTypeClass = "badge-type-gold";
+                                break;
+                            case 2:
+                                badgeTypeClass = "badge-type-silver";
+                                break;
+                            case 3:
+                                badgeTypeClass = "badge-type-bronze";
+                                break;
+                            default:
+                                badgeTypeClass = "badge-type-bronze";
+                                break;
+                        }
                     %>
                     <span class="user-badge shine <%= badgeTypeClass %>" title="<%= oneBadge.description %>">
                         <i class="fa <%= oneBadge.icon %>"></i>
                         <span class="badge-desc"><%= oneBadge.name %></span>
                     </span>
                     <%
-                        });
-                    }
+                    });
                     %>
                 </div>
-                <div class="mdl-card__supporting-text">
+                <%}%>
+                <div class="mdl-card__supporting-text user-bio">
                     <span><%= userJson['bio'] %></span>
                 </div>
             </div>

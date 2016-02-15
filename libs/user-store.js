@@ -92,9 +92,15 @@ function getActiveUsers(callback) {
                             }
                             if (userDetail.user.bio_raw) {
                                 userJson.bio = userDetail.user.bio_raw;
+                            } else {
+                                userJson.bio = "I'm not saying a bit about myself, because I'm cool.";
                             }
                             if (userDetail.user.website) {
-                                userJson.website = userDetail.user.website;
+                                let website = userDetail.user.website;
+                                let re = /http(s?):\/\/\S+/;
+                                if(re.test(website)) {
+                                    userJson.website = userDetail.user.website;
+                                }
                             }
                             //userJson.email = userDetail.user.email;
                             // badges
