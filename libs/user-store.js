@@ -2,13 +2,14 @@
 
 var querystring = require('querystring');
 var request = require('request');
+var config = require("../libs/config.js");
 
 var activeUsers = [];
 var userDetails = new Map();
 var exportV = {userDetails : userDetails};
-const discourseURL = "http://www.chuangxue.org"; //http://www.chuangxue.org/admin/users/list/active
-const apiKey = "ca70057f73c5f9635a731cfd98878b9a4b8b7a8665248b11f28a3a81caf234c2";
-const apiUsername = "Seeker";
+const discourseURL = config.discourseRoot; //http://www.chuangxue.org/admin/users/list/active
+const apiKey = config.discourseApiKey;
+const apiUsername = config.discourseApiUsername;
 
 function getDiscourseData(url, parameters, callback) {
 
@@ -160,7 +161,7 @@ console.log("-----------------");
 getActiveUsers(function(err, json){
 });
 setInterval(function(){
-    //getActiveUsers(function(err, json){});
-}, 30 * 1000);
+    getActiveUsers(function(err, json){});
+}, config.refreshDataInterval);
 
 module.exports = exportV;

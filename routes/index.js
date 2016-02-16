@@ -2,6 +2,7 @@ const express = require('express');
 const crypto = require('crypto');
 const url = require('url');
 const uuid = require('node-uuid');
+const config = require("../libs/config.js");
 
 const userStore = require('../libs/user-store');
 
@@ -31,21 +32,21 @@ router.get('/login', function(req, res, next) {
   */
   const nonce = uuid.v4();
   req.session.nonce = nonce;
-  const returnUrl = "http://localhost:3000/loginsuccess";
+  const returnUrl = config.returnUrl;
   const payload = 'nonce=' + nonce + '&return_sso_url=' + returnUrl;
   const base64Payload = (new Buffer(payload).toString('base64'));
   const urlEncodedPayload = encodeURIComponent(base64Payload);
-  const secret = 'zxcvbnmasdfghjkl';
+  const secret = config.discourseSecret;
   const hmac = crypto.createHmac('sha256', secret);
   hmac.update(base64Payload);
   const hexSignature = hmac.digest('hex');
-  res.redirect('http://www.chuangxue.org/session/sso_provider?sso=' + urlEncodedPayload + '&sig=' + hexSignature)
+  res.redirect(config.discourseRoot + '/session/sso_provider?sso=' + urlEncodedPayload + '&sig=' + hexSignature)
 });
 
 router.get('/loginsuccess', function(req, res, next) {
   const sso = req.query['sso'];
   const sig = req.query['sig'];
-  const secret = 'zxcvbnmasdfghjkl';
+  const secret = config.discourseSecret;
   const hmac = crypto.createHmac('sha256', secret);
   hmac.update(sso);
   const hexSignature = hmac.digest('hex');
