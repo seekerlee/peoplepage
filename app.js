@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 const session = require('express-session');
 const uuid = require('node-uuid');
 const userStore = require('./libs/user-store');
+var config = require("./libs/config.js");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -28,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
   genid: uuid.v1,
-  secret: '1kep_-a',
+  secret: config.sessionSecret,
   cookie: { maxAge: 60000 }
 }));
 

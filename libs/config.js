@@ -7,5 +7,6 @@ module.exports = {
     discourseApiUsername : 'Seeker',
     returnUrl : "http://localhost:3000/loginsuccess",
     discourseSecret : 'zxcvbnmasdfghjkl',
+    sessionSecret : '1kep_-a',
     refreshDataInterval : 30 * 1000
 };
