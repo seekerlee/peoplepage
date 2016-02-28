@@ -34,7 +34,7 @@ function getDiscourseData(url, parameters, callback) {
 
             callback(error, body || {}, response != null ? response.statusCode : null);
             console.log(getUrl);
-            console.log(body);
+            //console.log(body);
         }
     );
 }
