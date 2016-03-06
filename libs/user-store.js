@@ -4,7 +4,6 @@ var querystring = require('querystring');
 var request = require('request');
 var config = require("../libs/config.js");
 
-var activeUsers = [];
 var userDetails = new Map();
 var exportV = {userDetails : userDetails};
 const discourseURL = config.discourseRoot; //http://www.chuangxue.org/admin/users/list/active
@@ -35,7 +34,7 @@ function getDiscourseData(url, parameters, callback) {
 
             callback(error, body || {}, response != null ? response.statusCode : null);
             console.log(getUrl);
-            console.log(body);
+            //console.log(body);
         }
     );
 }
@@ -154,12 +153,9 @@ function getActiveUsers(callback) {
     );
 }
 
-getSingleUserInfo("jade", function(err, json){
-    //console.log(json);
-});
-console.log("-----------------");
 getActiveUsers(function(err, json){
 });
+
 setInterval(function(){
     getActiveUsers(function(err, json){});
 }, config.refreshDataInterval);

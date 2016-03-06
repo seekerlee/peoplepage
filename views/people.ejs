@@ -70,10 +70,15 @@
             -moz-user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
-            cursor: default;
             white-space: nowrap;
             position: relative;
             overflow: hidden;
+
+            text-decoration: none;
+            color: rgba(0,0,0,.54);
+        }
+        .user-badge:hover {
+            color: black;
         }
         .badge-type-bronze {
             border-color: #cd7f32;
@@ -181,6 +186,9 @@
             <%
             userDetails.forEach(function(userJson, key) {
                 "use strict"
+                if(filter && !filter(userJson, key)) {
+                    return;
+                }
                 /**
                  * Returns a random integer between min (inclusive) and max (inclusive)
                  * Using Math.round() will give you a non-uniform distribution!
@@ -248,10 +256,10 @@
                                 break;
                         }
                     %>
-                    <span class="user-badge shine <%= badgeTypeClass %>" title="<%= oneBadge.description %>">
+                    <a href="/people?badgeId=<%=oneBadge.id%>" class="user-badge <%= badgeTypeClass %>" title="<%= oneBadge.description %>">
                         <i class="fa <%= oneBadge.icon %>"></i>
                         <span class="badge-desc"><%= oneBadge.name %></span>
-                    </span>
+                    </a>
                     <%
                     });
                     %>
