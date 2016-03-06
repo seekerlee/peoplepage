@@ -9,8 +9,8 @@
 var get_time_difference = function ()
 {
     var earlierDate = new Date();
-    var laterDate = new Date(2015, 10, 21, 13, 0, 0, 0);
-    var oDiff = new Object();
+    var laterDate = new Date(2016, 2, 26, 9, 0, 0, 0);
+    var oDiff = {};
 
     //  Calculate Differences
     var nTotalDiff = laterDate.getTime() - earlierDate.getTime();
