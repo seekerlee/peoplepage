@@ -135,6 +135,9 @@ function getActiveUsers(callback) {
                                 if(uf['4']) {
                                     userJson.email = uf['4'];
                                 }
+                                if(uf['5']) {
+                                    userJson.title = uf['5'];
+                                }
                             }
                             console.info("set user info: " + username);
                             //console.info(userDetail);
