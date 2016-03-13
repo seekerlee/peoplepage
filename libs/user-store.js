@@ -86,6 +86,7 @@ function getActiveUsers(callback) {
                             userDetails.set(username, userJson);
                             userJson.id = userDetail.user.id;
                             userJson.name = userDetail.user.name || userDetail.user.username;
+                            userJson.username = userDetail.user.username;
                             userJson.avatar_template = userDetail.user.avatar_template;
                             if (userDetail.user.card_background) {
                                 userJson.card_background = userDetail.user.card_background;
