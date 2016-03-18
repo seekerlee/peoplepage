@@ -33,7 +33,7 @@ function getDiscourseData(url, parameters, callback) {
             }
 
             callback(error, body || {}, response != null ? response.statusCode : null);
-            console.log(getUrl);
+            //console.log(getUrl);
             //console.log(body);
         }
     );
@@ -139,7 +139,7 @@ function getActiveUsers(callback) {
                                     userJson.title = uf['5'];
                                 }
                             }
-                            console.info("set user info: " + username);
+                            //console.info("set user info: " + username);
                             //console.info(userDetail);
                         });
                     });

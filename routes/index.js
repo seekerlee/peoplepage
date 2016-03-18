@@ -137,6 +137,24 @@ router.get('/wechat/entry', function(req, res, next) {
 router.post('/wechat/entry', function(req, res, next) {
   "use strict";
 
-  console.log(req.body);
+  const token = 'keyboardhero';
+  const sig = req.query['signature'];
+  const times = req.query['timestamp'];
+  const nonce = req.query['nonce'];
+  const echostr = req.param('echostr');
+  const arr = [token, times, nonce];
+  arr.sort();
+  var tmpStr = arr.join('');
+
+  var shasum = crypto.createHash('sha1');
+  shasum.update(tmpStr);
+  var shaResult = shasum.digest('hex');    // 3.字符串tmpStr进行sha1加密
+  if(shaResult === sig){
+    console.log(req.body);           // 4.加密后的字符串与signature对比，确定来源于微信
+    res.send(echostr);
+  } else {
+    res.end('');
+  }
+
 });
 module.exports = router;
