@@ -134,4 +134,9 @@ router.get('/wechat/entry', function(req, res, next) {
     res.end('');
   }
 });
+router.post('/wechat/entry', function(req, res, next) {
+  "use strict";
+
+  console.log(req.body);
+});
 module.exports = router;
