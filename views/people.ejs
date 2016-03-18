@@ -208,7 +208,7 @@
                 <div class="profile-bg" style=" background-image: url('<%= backgroundImg %>')">
                 </div>
                 <div class="avatar-wrapper">
-                    <img class="avatar" src="<%= rootUrl + userJson['avatar128']%>">
+                    <a target="_blank" href="<%= rootUrl + '/users/' + userJson['username'] %>/activity"><img class="avatar" src="<%= rootUrl + userJson['avatar128']%>"></a>
                 </div>
                 <div class="user-info">
                     <h2 class="mdl-card__title-text"><%= userJson['name'] %></h2>

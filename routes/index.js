@@ -92,6 +92,11 @@ function badgeFilterGen(badgeId) {
   });
 }
 
+router.get('/', function(req, res, next) {
+    // badge 100 means TEDx 组织者
+    res.render('index', { userDetails: userStore.userDetails, rootUrl : config.discourseRoot, filter : badgeFilterGen(100) });
+});
+
 router.get('/people', function(req, res, next) {
   // 1. get my info from
   //    http://www.chuangxue.org/users/jade.json

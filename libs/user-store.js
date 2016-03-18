@@ -86,6 +86,7 @@ function getActiveUsers(callback) {
                             userDetails.set(username, userJson);
                             userJson.id = userDetail.user.id;
                             userJson.name = userDetail.user.name || userDetail.user.username;
+                            userJson.username = userDetail.user.username;
                             userJson.avatar_template = userDetail.user.avatar_template;
                             if (userDetail.user.card_background) {
                                 userJson.card_background = userDetail.user.card_background;
@@ -133,6 +134,9 @@ function getActiveUsers(callback) {
                                 }
                                 if(uf['4']) {
                                     userJson.email = uf['4'];
+                                }
+                                if(uf['5']) {
+                                    userJson.title = uf['5'];
                                 }
                             }
                             console.info("set user info: " + username);
