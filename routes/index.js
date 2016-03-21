@@ -113,4 +113,49 @@ router.get('/team', function(req, res, next) {
   res.render('people', { userDetails: userStore.userDetails, rootUrl : config.discourseRoot, filter : badgeFilterGen(100) });
 });
 
+router.get('/wechat/entry', function(req, res, next) {
+  "use strict";
+
+  const token = 'keyboardhero';
+  const sig = req.query['signature'];
+  const times = req.query['timestamp'];
+  const nonce = req.query['nonce'];
+  const echostr = req.query['echostr'];
+  const arr = [token, times, nonce];
+  arr.sort();
+  var tmpStr = arr.join('');
+
+  var shasum = crypto.createHash('sha1');
+  shasum.update(tmpStr);
+  var shaResult = shasum.digest('hex');    // 3.字符串tmpStr进行sha1加密
+  if(shaResult === sig){             // 4.加密后的字符串与signature对比，确定来源于微信
+    res.send(echostr);
+  } else {
+    res.end('');
+  }
+});
+router.post('/wechat/entry', function(req, res, next) {
+  "use strict";
+
+  const token = 'keyboardhero';
+  const sig = req.query['signature'];
+  const times = req.query['timestamp'];
+  const nonce = req.query['nonce'];
+  const echostr = req.query['echostr'];
+  const arr = [token, times, nonce];
+  arr.sort();
+  var tmpStr = arr.join('');
+
+  var shasum = crypto.createHash('sha1');
+  shasum.update(tmpStr);
+  var shaResult = shasum.digest('hex');    // 3.字符串tmpStr进行sha1加密
+  if(shaResult === sig){
+    console.log(req.body);           // 4.加密后的字符串与signature对比，确定来源于微信
+    res.send(echostr);
+  } else {
+    console.log(req.body);
+    res.end(' ');
+  }
+
+});
 module.exports = router;

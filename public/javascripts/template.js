@@ -107,7 +107,7 @@
 					itemSelector: '.isotope-item',
 					layoutMode: 'masonry',
 					transitionDuration: '0.6s',
-					filter: ".2015women",
+					filter: ".2015dna",
                     onLayout: function() {
                         $(window).trigger("scroll");
                     }
