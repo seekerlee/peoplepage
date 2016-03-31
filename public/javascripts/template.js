@@ -107,7 +107,7 @@
 					itemSelector: '.isotope-item',
 					layoutMode: 'masonry',
 					transitionDuration: '0.6s',
-					filter: ".2015dna",
+					filter: ".2015leu",
                     onLayout: function() {
                         $(window).trigger("scroll");
                     }
