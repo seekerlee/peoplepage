@@ -9,7 +9,7 @@
 var get_time_difference = function ()
 {
     var earlierDate = new Date();
-    var laterDate = new Date(2016, 2, 26, 9, 0, 0, 0);
+    var laterDate = new Date(2016, 9, 29, 13, 0, 0, 0);
     var oDiff = {};
 
     //  Calculate Differences
