@@ -5,7 +5,7 @@ const uuid = require('node-uuid');
 const config = require("../libs/config.js");
 
 const userStore = require('../libs/user-store');
-
+const database = require('../libs/database');
 const router = express.Router();
 
 /* GET home page. */
@@ -32,7 +32,7 @@ router.get('/login', function(req, res, next) {
   */
   const nonce = uuid.v4();
   req.session.nonce = nonce;
-  const returnUrl = config.returnUrl;
+  const returnUrl = config.returnUrl; //http://localhost:3000/loginsuccess
   const payload = 'nonce=' + nonce + '&return_sso_url=' + returnUrl;
   const base64Payload = (new Buffer(payload).toString('base64'));
   const urlEncodedPayload = encodeURIComponent(base64Payload);
@@ -95,6 +95,21 @@ function badgeFilterGen(badgeId) {
 router.get('/', function(req, res, next) {
     // badge 100 means TEDx 组织者
     res.render('index', { userDetails: userStore.userDetails, rootUrl : config.discourseRoot, filter : badgeFilterGen(100) });
+});
+
+router.get('/event', function(req, res, next) {
+  // badge 100 means TEDx 组织者
+  var allActvt = database.GetAllEvents();
+  res.send(JSON.stringify(allActvt));
+});
+
+router.get('/event/:id/talk', function(req, res, next) {
+  // badge 100 means TEDx 组织者
+  var sess = [];
+  var id = req.params.id;
+  // find by id
+  var data = database.GetTalksByEventId(id);
+  res.send(JSON.stringify(data));
 });
 
 router.get('/people', function(req, res, next) {
