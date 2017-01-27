@@ -98,18 +98,21 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/event', function(req, res, next) {
-  // badge 100 means TEDx 组织者
   var allActvt = database.GetAllEvents();
   res.send(JSON.stringify(allActvt));
 });
 
 router.get('/event/:id/talk', function(req, res, next) {
-  // badge 100 means TEDx 组织者
   var sess = [];
   var id = req.params.id;
   // find by id
   var data = database.GetTalksByEventId(id);
   res.send(JSON.stringify(data));
+});
+
+router.get('/sponsor', function(req, res, next) {
+  var result = database.GetActiveSponsor();
+  res.send(JSON.stringify(result));
 });
 
 router.get('/people', function(req, res, next) {

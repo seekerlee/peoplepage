@@ -10,7 +10,7 @@ const events = [{
     when: 121212121,
     where: 'Suzhou Cultural and Art Center',
     audienceCount: 500
-},{
+}, {
     eventId: '2014-dream-never-act-itself',
     theme: 'Dream Never Act Itself',
     displayName: '2014 DNA',
@@ -18,7 +18,7 @@ const events = [{
     when: 121212121,
     where: 'Suzhou Cultural and Art Center',
     audienceCount: 500
-},{
+}, {
     eventId: '2015-predicting-the-future',
     theme: 'Predicting The Future',
     displayName: '2015 预见未来',
@@ -26,7 +26,7 @@ const events = [{
     when: 121212121,
     where: 'Suzhou Cultural and Art Center',
     audienceCount: 500
-},{
+}, {
     eventId: '2015-mirror-image',
     theme: 'Mirror Image',
     displayName: '2015 镜像',
@@ -34,7 +34,7 @@ const events = [{
     when: 121212121,
     where: 'Suzhou Cultural and Art Center',
     audienceCount: 500
-},{
+}, {
     eventId: '2015-light-em-up',
     theme: "Light'em up",
     displayName: "2014 Light'em Up",
@@ -550,15 +550,239 @@ const talks = [{
     "video": {"type": "youku", "youkuId": "XMTQ3ODAwNjA5Mg==", "length": 120}
 }];
 
+const sponsor = [{
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.vermeiren.com",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/vm.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.theofficestar.com",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/officestar.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.xjtlu.edu.cn/en/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/xp.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "https://www.juhe.cn",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/jhsj.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://mailchimp.com/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/MailChimp.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://xiumi.us/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/xiumi-logo.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.eventdove.com/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/huige.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.skema-bs.cn/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/skema.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/sy.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.kotrip.com/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/maokong.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/sipnpo.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.suzart.cn/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/jjm.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/zhix.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://developers.dushu.hu/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/gdg-suzhou.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.sscac.com.cn/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/szdjy.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.lingxi360.com/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/lx.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://gongyi.la/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/gongyi.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.34580.com/",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/fmkt.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.opark.com",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/cyzg.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://ckb.opark.com",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/ckb.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.yunshantea.com",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/yscq.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.fdemaison.com/index.html",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/mssj.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.benlai.com",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/blsh.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/amaiwei.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/df.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/zz.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/panda.png"
+}, {
+    "id": "",
+    "name": "",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.isuzhou.me",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/qdsz.png"
+}];
+
+
 module.exports = {
-    GetAllEvents: function(){
+    GetAllEvents: function () {
         "use strict";
         return events;
     },
-    GetTalksByEventId: function(eventId) {
+    GetTalksByEventId: function (eventId) {
         "use strict";
-        return talks.filter(function(talk){
+        return talks.filter(function (talk) {
             return talk.eventId == eventId;
         });
+    },
+    GetActiveSponsor: function() {
+        "use strict";
+        return sponsor;
     }
 };

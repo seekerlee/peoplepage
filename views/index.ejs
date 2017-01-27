@@ -244,72 +244,11 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 </div>
 <div class="section clearfix object-non-visible" data-animation-effect=fadeIn>
 	<div class id=sponsor>
-	<h1 class="title text-center">合作伙伴</h1>
+		<h1 class="title text-center">合作伙伴</h1>
 		<hr class=colored>
 		<div class=text-center>
 			<!--VM-->
-			<a href=http://www.vermeiren.com target=_blank><img class="slogo h70"
-																data-original=http://static.tedxsuzhou.com/images/sponsor/vm.png></a>
-			<!--星辰商务-->
-			<a href=http://www.theofficestar.com target=_blank><img class="slogo h70"
-																	data-original=http://static.tedxsuzhou.com/images/sponsor/officestar.png></a>
-			<!--西交利物浦-->
-			<a href=http://www.xjtlu.edu.cn/en/ target=_blank><img class="slogo h70"
-																   data-original=http://static.tedxsuzhou.com/images/sponsor/xp.png></a>
-			<!--聚合数据-->
-			<a href=https://www.juhe.cn target=_blank><img class="slogo h70"
-																   data-original=http://static.tedxsuzhou.com/images/sponsor/jhsj.png></a>
-			<!--mailchimp-->
-			<a href=http://mailchimp.com/ target=_blank><img class="slogo h70"
-															 data-original=http://static.tedxsuzhou.com/images/sponsor/MailChimp.png></a>
-			<!--秀米-->
-			<a href=http://xiumi.us/ target=_blank><img class="slogo h70"
-														data-original=http://static.tedxsuzhou.com/images/sponsor/xiumi-logo.png></a>
-			<!--会鸽-->
-			<a href=http://www.eventdove.com/ target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/huige.png></a>
-			<a href=http://www.skema-bs.cn/ target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/skema.png></a>
-			<!--苏园记-->
-			<a><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/sy.png></a>
-			<!--猫空-->
-			<a href=http://www.kotrip.com/ target=_blank><img class="slogo h70"
-															  data-original=http://static.tedxsuzhou.com/images/sponsor/maokong.png></a>
-			<!--sipnop-->
-			<a><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/sipnpo.png></a>
-			<!--金鸡湖美术馆-->
-			<a href=http://www.suzart.cn/ target=_blank><img class="slogo h70"
-															 data-original=http://static.tedxsuzhou.com/images/sponsor/jjm.png></a>
-			<!--知行-->
-			<a><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/zhix.png></a>
-			<!--GDG-->
-			<a href=http://developers.dushu.hu/ target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/gdg-suzhou.png></a>
-			<!--苏艺-->
-			<a href=http://www.sscac.com.cn/ target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/szdjy.png></a>
-			<!--灵析-->
-			<a href=http://www.lingxi360.com/ target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/lx.png></a>
-			<!--公益啦-->
-			<a href=http://gongyi.la/ target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/gongyi.png></a>
-			<!--食行生鲜-->
-			<a href=http://www.34580.com/ target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/fmkt.png></a>
-			<!--opark-->
-			<a href=http://www.opark.com target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/cyzg.png></a>
-			<!--创客邦-->
-			<a href=http://ckb.opark.com target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/ckb.png></a>
-			<!--云山传奇-->
-			<a href=http://www.yunshantea.com target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/yscq.png></a>
-			<!--美圣世家-->
-			<a href=http://www.fdemaison.com/index.html target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/mssj.png></a>
-			<!--本来生活-->
-			<a href=http://www.benlai.com target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/blsh.png></a>
-			<!--安迈威户外-->
-			<a><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/amaiwei.png></a>
-			<!--丁非文创-->
-			<a><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/df.png></a>
-			<!--转转-->
-			<a><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/zz.png></a>
-			<!--pandakids-->
-			<a><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/panda.png></a>
-			<!--情调苏州-->
-			<a href=http://www.isuzhou.me target=_blank><img class="slogo h70" data-original=http://static.tedxsuzhou.com/images/sponsor/qdsz.png></a>
+			<a v-for="sponsor in sponsors" :href="sponsor.link" target=_blank><img class="slogo h70" :src="sponsor.logoUrl"></a>
 			
 		</div>
 	</div>
@@ -384,7 +323,8 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script>
 	//eventManager.fire('dsa');
-	var eventModel = new Vue({
+	//var eventModel =
+	new Vue({
 		el: '#event-select',
 		data: {
 			events: []
@@ -397,6 +337,9 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 					ev.isActive = false;
 				});
 				model.events = evs;
+				if(model.events.length > 0) {
+					model.selectEvent(model.events[0]);
+				}
 			});
 		},
 		methods: {
@@ -409,15 +352,13 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 			}
 		}
 	});
-	var videoModel = new Vue({
+	//var videoModel =
+	new Vue({
 		el: '#session-video',
 		data: {
 			talks: []
 		},
-		methods: {
-
-		},
-		created: function(){
+		mounted: function(){
 			var model = this;
 			eventManager.addListener('event-selected', function(eventId){
 				// 1. fetch session for this event
@@ -440,6 +381,40 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 			});
 		}
 	})
+
+
+	// sponsor Model
+	new Vue({
+		el: '#sponsor',
+		data: {
+			sponsors: []
+		},
+		mounted: function() {
+			var el = this.$el;
+			var model = this;
+			function isScrolledIntoView(elem) {
+				var docViewTop = $(window).scrollTop();
+				var docViewBottom = docViewTop + $(window).height();
+
+				var elemTop = $(elem).offset().top;
+				var elemBottom = elemTop + $(elem).height();
+
+				return (elemBottom <= docViewBottom) //&& (elemTop >= docViewTop);
+			}
+			function showSponsor() {
+				$.get("/sponsor", function(data){
+					var sponsors = JSON.parse(data);
+					model.sponsors = sponsors;
+				});
+			}
+			var id = window.setInterval(function() {
+				if(isScrolledIntoView(el)) {
+					window.clearInterval(id);
+					showSponsor();
+				}
+			}, 1000);
+		}
+	});
 </script>
 <script>
 //	(function (d, e, j, h, f, c, b) {
