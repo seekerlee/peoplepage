@@ -2,6 +2,7 @@ const express = require('express');
 const crypto = require('crypto');
 const url = require('url');
 const uuid = require('node-uuid');
+const _ = require('lodash');
 const config = require("../libs/config.js");
 
 const userStore = require('../libs/user-store');
@@ -92,10 +93,10 @@ function badgeFilterGen(badgeId) {
   });
 }
 
-router.get('/', function(req, res, next) {
+//router.get('/', function(req, res, next) {
     // badge 100 means TEDx 组织者
-    res.render('index', { userDetails: userStore.userDetails, rootUrl : config.discourseRoot, filter : badgeFilterGen(100) });
-});
+//    res.render('index', { userDetails: userStore.userDetails, rootUrl : config.discourseRoot, filter : badgeFilterGen(100) });
+//});
 
 router.get('/event', function(req, res, next) {
   var allActvt = database.GetAllEvents();
@@ -115,7 +116,7 @@ router.get('/sponsor', function(req, res, next) {
   res.send(JSON.stringify(result));
 });
 
-router.get('/people', function(req, res, next) {
+router.get('/people-page', function(req, res, next) {
   // 1. get my info from
   //    http://www.chuangxue.org/users/jade.json
 
@@ -126,6 +127,22 @@ router.get('/people', function(req, res, next) {
 
 });
 
+router.get('/people/team', function(req, res, next) {
+  var users = userStore.userDetails;
+  var team = [];
+  for (var key in users) {
+    if (users.hasOwnProperty(key)) {
+      //console.log(key);
+      var userJson = users[key];
+      if(badgeFilterGen(100)(userJson)) {
+
+        userJson.avatar128 = config.discourseRoot + userJson.avatar_template.replace("{size}", "256");
+        team.push(userJson);
+      }
+    }
+  }
+  res.send(JSON.stringify(team));
+});
 router.get('/team', function(req, res, next) {
   // badge 100 means TEDx 组织者
   res.render('people', { userDetails: userStore.userDetails, rootUrl : config.discourseRoot, filter : badgeFilterGen(100) });

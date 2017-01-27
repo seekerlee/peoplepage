@@ -175,39 +175,15 @@
 		</div>
 		<div class="row content-row">
 			<div class=col-lg-12>
-				<div class=about-carousel>
-					<%
-					userDetails.forEach(function(userJson, key) {
-						"use strict"
-						if(filter && !filter(userJson, key)) {
-							return;
-						}
-						/**
-						 * Returns a random integer between min (inclusive) and max (inclusive)
-						 * Using Math.round() will give you a non-uniform distribution!
-						 */
-						function getRandomInt(min, max) {
-							return Math.floor(Math.random() * (max - min + 1)) + min;
-						}
-						userJson.avatar128 = userJson.avatar_template.replace("{size}", "256");
-						var backgroundImg;
-						if (userJson.card_background) {
-							backgroundImg = rootUrl + userJson.card_background
-						} else {
-							backgroundImg = "/images/mountain" + getRandomInt(0, 4) + ".png"
-						}
-					%>
-					<div class=item>
+				<div id="team-members" class=about-carousel>
+					<div v-for="member in members" class=item>
 						<div class=team-member>
-							<img data-src="<%= rootUrl + userJson['avatar128']%>"
-								 class="lazyOwl img-responsive img-circle img-center" alt>
-							<h4><%= userJson['name'] %><%= userJson['title'] ? ('， ' + userJson['title']) : '' %></h4>
-							<p><%= userJson['bio'] %></p>
+							<img :data-src="member.avatar128"
+								 class="lazyOwl img-responsive img-circle img-center">
+							<h4>{{member.name}}<template v-if="member.title">, {{member.title}}</template></h4>
+							<p>{{member.bio}}</p>
 						</div>
 					</div>
-					<%
-					});
-					%>
 				</div>
 			</div>
 		</div>
@@ -399,7 +375,7 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 				var elemTop = $(elem).offset().top;
 				var elemBottom = elemTop + $(elem).height();
 
-				return (elemBottom <= docViewBottom) //&& (elemTop >= docViewTop);
+				return (elemBottom <= (docViewBottom + 100)) //&& (elemTop >= docViewTop);
 			}
 			function showSponsor() {
 				$.get("/sponsor", function(data){
@@ -411,6 +387,45 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 				if(isScrolledIntoView(el)) {
 					window.clearInterval(id);
 					showSponsor();
+				}
+			}, 1000);
+		}
+	});
+
+
+	new Vue({
+		el: '#team-members',
+		data: {
+			members: []
+		},
+		mounted: function() {
+			var el = this.$el;
+			var model = this;
+			function isScrolledIntoView(elem) {
+				var docViewTop = $(window).scrollTop();
+				var docViewBottom = docViewTop + $(window).height();
+
+				var elemTop = $(elem).offset().top;
+				var elemBottom = elemTop + $(elem).height();
+
+				return (elemBottom < (docViewBottom + 100)) //&& (elemTop >= docViewTop);
+			}
+			function show() {
+				$.get("/people/team", function(data){
+					var members = JSON.parse(data);
+					model.members = members;
+					Vue.nextTick(function(){
+						$(el).owlCarousel({
+							items: 4,
+							lazyLoad : true
+						});
+					});
+				});
+			}
+			var id = window.setInterval(function() {
+				if(isScrolledIntoView(el)) {
+					window.clearInterval(id);
+					show();
 				}
 			}, 1000);
 		}

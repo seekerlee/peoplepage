@@ -83,7 +83,7 @@ function getActiveUsers(callback) {
                                 return;
                             }
                             let userJson = {};
-                            userDetails.set(username, userJson);
+                            userDetails[username] = userJson;
                             userJson.id = userDetail.user.id;
                             userJson.name = userDetail.user.name || userDetail.user.username;
                             userJson.username = userDetail.user.username;

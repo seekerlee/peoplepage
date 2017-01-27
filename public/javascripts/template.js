@@ -146,10 +146,6 @@
 		// Owl Carousel Settings
 
 		$("#owl-example").owlCarousel();
-        $(".about-carousel").owlCarousel({
-            items: 4,
-			lazyLoad : true
-        });
 
         $(".portfolio-carousel").owlCarousel({
             singleItem: true,
