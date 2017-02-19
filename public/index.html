@@ -113,8 +113,7 @@
 						<div class="image-box">
 							<div class="overlay-container">
 								<img :src="talk.coverImg" style="">
-								<a class="overlay talklink" :href="'http://player.youku.com/embed/' + talk.video.youkuId">
-									<i class="fa fa-search-plus"></i>
+								<a class="overlay talklink" :href="talk.video.url">
 									<span>{{talk.sessionDesc}}</span>
 								</a>
 							</div>
@@ -286,6 +285,8 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 	</div>
 </footer>
 <script type=text/javascript src=http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js></script>
+<script type=text/javascript src=https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js></script>
+
 <script type=text/javascript src=http://cdn.staticfile.org/twitter-bootstrap/3.3.0/js/bootstrap.min.js></script>
 <script type=text/javascript src=http://cdn.staticfile.org/modernizr/2.8.3/modernizr.min.js></script>
 <script type=text/javascript src=http://static.tedxsuzhou.com/plugins/jquery.lazyload.min.js></script>
@@ -342,6 +343,14 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 					// 2. convert data to use
 					// 3. populate session data
 					var talks = JSON.parse(data);
+					_.remove(talks, function(tk){
+						return !tk.video;
+					});
+					talks.forEach(function(tk){
+						if(tk.video && tk.video.type == "youku") { // some video missing
+							tk.video.url = 'http://player.youku.com/embed/' + tk.video.youkuId;
+						}
+					});
 					model.talks = talks;
 					Vue.nextTick(function(){
 						$('a.talklink', model.$el).magnificPopup({
@@ -356,7 +365,7 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 				});
 			});
 		}
-	})
+	});
 
 
 	// sponsor Model

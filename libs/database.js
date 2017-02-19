@@ -37,8 +37,16 @@ const events = [{
 }, {
     eventId: '2015-light-em-up',
     theme: "Light'em up",
-    displayName: "2014 Light'em Up",
+    displayName: "2015 Light'em Up",
     type: 'youth',
+    when: 121212121,
+    where: 'Suzhou Cultural and Art Center',
+    audienceCount: 500
+}, {
+    eventId: '2016-brainteaser',
+    theme: "brainteaser",
+    displayName: "2015 谜",
+    type: 'yearly',
     when: 121212121,
     where: 'Suzhou Cultural and Art Center',
     audienceCount: 500
@@ -548,6 +556,118 @@ const talks = [{
     "performerName": "叶子愉 Christina Ye",
     "coverImg": "http://static.tedxsuzhou.com/images/talks/2015leu/12_yeziyu.jpg",
     "video": {"type": "youku", "youkuId": "XMTQ3ODAwNjA5Mg==", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "走进吴文化",
+    "sessionDesc": "国家二级演员、苏州评弹团副团长",
+    "performerName": "周明华",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/zmh.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=d0305agadd1&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "消灭怀才不遇",
+    "sessionDesc": "北京欢否信息技术有限公司创始人兼CEO，上海欢欢邦信息科技有限公司CEO、畅销书《自我营销七堂课》作者、《欢缪的钥匙》创意互联O2O体验中心创始人。 她是FINDFUN的倡导者，是职业生涯设计家，号称职谋女王，也是传媒届的辣评名嘴，企业界的跨界勇者，投资和经营过广告传播公司，互联网公司，教育培训公司，时尚品牌公司等，有许多经典和案例和出彩的作品。其特立独行和天马行空，自成一格。",
+    "performerName": "黄欢",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/hh.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=i0306fwurvs&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "看透所谓的互联网思维",
+    "sessionDesc": "时空电动",
+    "performerName": "马辉",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/mh.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=d0306l0wq2q&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "向上 向下",
+    "sessionDesc": "i20青年发展平台联合发起人，杉树计划发起人之一。关注社会创新，社会企业，乡村社区营造等领域，致力于运用商业思维解决社会问题。",
+    "performerName": "陈瑶",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/cy.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=g03068qe5fo&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "change your brain, change the world",
+    "sessionDesc": "Tamar Chelouche 女士是SIT系统性创新思维中国公司全球创新副总裁，负责将SIT公司在创新利于的丰富经验带到中国。",
+    "performerName": "Tamar Chelouche",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/tc.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=d0306b8e0rw&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "宇宙之谜",
+    "sessionDesc": "在北京大学天文系从事暗能量相关研究，以及在中国科学院国家天文台（NAOC）从事博士后工作，之后作为助理研究员从事宇宙熟知模拟的研究。同时对科学传播保持热情，是《星际穿越》的中文版译者",
+    "performerName": "王乔",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/wq.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=c0306glxfe4&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "探索视觉特效",
+    "sessionDesc": "The Foundry公司亚太视效总监，现居台湾。曾在Digital Domain等国际知名影视动画特效公司担任艺术总监。参与制作多次荣获国内外多想大将的作品《越狱》《CSI》《博物馆奇妙夜2》《雷神》等。",
+    "performerName": "杨剑成",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/yjc.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=v0306ewwsd6&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "让地沟油飞",
+    "sessionDesc": "刘疏同于荷兰阿姆斯特丹自由大学毕业后进入世界第一家生物航空燃料供应商SkyNRG工作帮助实现地沟油航空燃料飞行。在发现国内地沟油问题后回国创立了MotionECO公司，专注于交通领域的节能减排",
+    "performerName": "刘疏同",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/lst.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=s0305qez1lr&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "吃谜-补上每一扇破窗",
+    "sessionDesc": "张洪良与2011年创立食行生鲜，提出C2B2F才是网上买菜的正确姿势，希望重构生鲜农产品生产和流通的方式，心怀让农民买菜不再难，市民买菜不再烦的理想。",
+    "performerName": "张洪良",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/zhl.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=y03062a3bwk&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "我们都一样",
+    "sessionDesc": "苏州市盲聋学校初三的一名学生，现在是学校乐队里的鼓手。好交朋友，相信以后会遇到可以互相丰富彼此生活的人。",
+    "performerName": "吴作鑫",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/wzx.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=u0307aaxt1o&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "情绪之谜",
+    "sessionDesc": "一位对哲学充满兴趣的半路出道心理学家。2008年创办心灵咖啡网普及心理学，2014年出版科普读物《逆袭心理学》，希望将心理学带入到普通人的生活中。梦想以心理咨询之后的更多方法帮助人们更好地工作与生活。",
+    "performerName": "段然",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/dr.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=v0307nil2y9&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "media for the greater good",
+    "sessionDesc": "《城市之爱》全球系列影片的制作人，致力于通过用镜头捕捉到底一个个小故事来展现城市的美好以及人们对她的向往。“城市，我爱你”充分向观众展现了一个又一个平和美好，充满希望，持续发展富有生机活力的城市。更令人赞叹的是，影片在向我们展现这些美好城市的同时，也在鼓励我们建造更好的家园。",
+    "performerName": "Emmanuel Benbihy",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/eb.png"
+    //"video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=i0306fwurvs&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "基因的告白",
+    "sessionDesc": "孙飞，专注生物一眼领域十余年，曾供职于免疫学和新药研发领域公司。现为键路生物科技公司联合创始人，以及运营总监。致力于推动基因组学临床应用的开放平台，为医疗机构提供基因检测的完整解决方案。",
+    "performerName": "孙飞",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/sf.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=z03072ttpd3&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-brainteaser",
+    "name": "新闻在，记者就在",
+    "sessionDesc": "苏州交通广播急着，节目主持人。曾担任汶川、雅安地震的前线记者，甬温线高铁事故的记者。2015年捐献造血干细胞，并成为有中宣部、中国记协组织的全国“好记者讲好故事”巡讲团成员。",
+    "performerName": "方超",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/fc.png",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=d03077gbde8&tiny=0&auto=0", "length": 120}
 }];
 
 const sponsor = [{
@@ -767,6 +887,13 @@ const sponsor = [{
     "active": true,
     "link": "http://www.isuzhou.me",
     "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/qdsz.png"
+}, {
+    "id": "",
+    "name": "巾帼",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/jg.png"
 }];
 
 
