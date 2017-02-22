@@ -57,8 +57,6 @@
 									<ul class="nav navbar-nav navbar-right">
 										<li><a href=#talkv>演讲视频</a>
 										</li>
-										<li><a href=#history>追溯之旅</a>
-										</li>
 										<li><a href=#participate>参与</a>
 										</li>
 										<li><a href=#team>团队</a>
@@ -108,19 +106,23 @@
 				</div>
 
 				<div id="session-video" class="row grid-space-20">
-					<div v-for="talk in talks" class="col-sm-6 col-md-3 video-item" style="margin-bottom: 20px;">
 
-						<div class="image-box">
-							<div class="overlay-container">
-								<img :src="talk.coverImg" style="">
-								<a class="overlay talklink" :href="talk.video.url">
-									<span>{{talk.sessionDesc}}</span>
-								</a>
+					<transition-group name="list" tag="div">
+						<div v-for="talk in talks" v-bind:key="talk" class="col-sm-6 col-md-3 video-item" style="margin-bottom: 20px;">
+
+							<div class="image-box">
+								<div class="overlay-container">
+
+									<img :src="talk.coverImg" style="min-height: 175px;">
+									<a class="overlay talklink" :href="talk.video.url">
+										<span>{{talk.sessionDesc}}</span>
+									</a>
+								</div>
+								<a class="btn btn-default btn-block" >{{talk.performerName}}</a>
 							</div>
-							<a class="btn btn-default btn-block" >{{talk.performerName}}</a>
-						</div>
 
-					</div> <!-- v-for session in sessions-->
+						</div> <!-- v-for session in sessions-->
+					</transition-group>
 				</div>
 			</div>
 		</div>
@@ -222,9 +224,9 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 		<h1 class="title text-center">合作伙伴</h1>
 		<hr class=colored>
 		<div class=text-center>
-			<!--VM-->
-			<a v-for="sponsor in sponsors" :href="sponsor.link" target=_blank><img class="slogo h70" :src="sponsor.logoUrl"></a>
-			
+			<transition-group name="list" tag="div">
+				<a v-for="sponsor in sponsors" :href="sponsor.link" target=_blank v-bind:key="sponsor"><img class="slogo h70" :src="sponsor.logoUrl"></a>
+			</transition-group>
 		</div>
 	</div>
 </div>
@@ -277,8 +279,8 @@ TEDxSuzhou 于2011年10月7日获得 TED 总部审批，由苏州本地团队以
 	<div class=container>
 		<div class=row>
 			<div class=col-md-12>
-				<p class=text-center><a rel="nofollow" href="http://www.miitbeian.gov.cn">苏ICP备14048502号-2</a> ©2016 创学空间
-					<br> This independent TEDx event is operated under license from TED | TEDxSuzhou 2015 | Made
+				<p class=text-center><a rel="nofollow" href="http://www.miitbeian.gov.cn">苏ICP备14048502号-2</a> ©2017 创学空间
+					<br> This independent TEDx event is operated under license from TED | TEDxSuzhou 2017 | Made
 					with <i class="fa fa-heart-o"></i> by GDG Suzhou</p>
 			</div>
 		</div>

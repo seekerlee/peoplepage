@@ -3,9 +3,33 @@
  */
 
 const events = [{
-    eventId: '2014-creative-leap',
-    theme: 'Creative Leap',
-    displayName: '2014 创意飞跃',
+    eventId: '2016-brainteaser',
+    theme: "brainteaser",
+    displayName: "2016 谜",
+    type: 'yearly',
+    when: 121212121,
+    where: 'Suzhou Cultural and Art Center',
+    audienceCount: 500
+}, {
+    eventId: '2015-light-em-up',
+    theme: "Light'em up",
+    displayName: "2015 Light'em Up",
+    type: 'youth',
+    when: 121212121,
+    where: 'Suzhou Cultural and Art Center',
+    audienceCount: 500
+}, {
+    eventId: '2015-mirror-image',
+    theme: 'Mirror Image',
+    displayName: '2015 镜像',
+    type: 'women',
+    when: 121212121,
+    where: 'Suzhou Cultural and Art Center',
+    audienceCount: 500
+}, {
+    eventId: '2015-predicting-the-future',
+    theme: 'Predicting The Future',
+    displayName: '2015 预见未来',
     type: 'yearly',
     when: 121212121,
     where: 'Suzhou Cultural and Art Center',
@@ -19,33 +43,9 @@ const events = [{
     where: 'Suzhou Cultural and Art Center',
     audienceCount: 500
 }, {
-    eventId: '2015-predicting-the-future',
-    theme: 'Predicting The Future',
-    displayName: '2015 预见未来',
-    type: 'yearly',
-    when: 121212121,
-    where: 'Suzhou Cultural and Art Center',
-    audienceCount: 500
-}, {
-    eventId: '2015-mirror-image',
-    theme: 'Mirror Image',
-    displayName: '2015 镜像',
-    type: 'women',
-    when: 121212121,
-    where: 'Suzhou Cultural and Art Center',
-    audienceCount: 500
-}, {
-    eventId: '2015-light-em-up',
-    theme: "Light'em up",
-    displayName: "2015 Light'em Up",
-    type: 'youth',
-    when: 121212121,
-    where: 'Suzhou Cultural and Art Center',
-    audienceCount: 500
-}, {
-    eventId: '2016-brainteaser',
-    theme: "brainteaser",
-    displayName: "2015 谜",
+    eventId: '2014-creative-leap',
+    theme: 'Creative Leap',
+    displayName: '2014 创意飞跃',
     type: 'yearly',
     when: 121212121,
     where: 'Suzhou Cultural and Art Center',

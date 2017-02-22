@@ -540,3 +540,15 @@ footer.footer .copyright p.small {
 #reglink {
     font-size: 2em;
 }
+
+
+.list-enter-active {
+    transition: all 1s;
+}
+.list-enter {
+    /*opacity: 0;*/
+    filter: blur(5px);
+}
+.list-leave {
+    display: none;
+}
