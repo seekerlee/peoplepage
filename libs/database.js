@@ -3,6 +3,14 @@
  */
 
 const events = [{
+    eventId: '2016-deep-inside',
+    theme: "Deep Inside",
+    displayName: "2016 探寻真我",
+    type: 'women',
+    when: 121212121,
+    where: 'Suzhou Cultural and Art Center',
+    audienceCount: 500
+}, {
     eventId: '2016-brainteaser',
     theme: "brainteaser",
     displayName: "2016 谜",
@@ -669,6 +677,99 @@ const talks = [{
     "coverImg": "http://static.tedxsuzhou.com/images/talks/2016bt/fc.png",
     "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=d03077gbde8&tiny=0&auto=0", "length": 120}
 }];
+
+var deepInside=[{
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "求助弃婴的价值",
+    "sessionDesc": "创办“朴质公益”，开启10年弃婴养护之路，竭力为病残弃婴提供物质安全感、精神归属感。不辍思考：如何改写被弃孩子命运？",
+    "performerName": "徐朴",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/xp.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=j03538x7g70&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "留下印迹",
+    "sessionDesc": "从近代缂丝起落中走出的民间艺术家。以缂丝作画，一丝一线，藏着“匠人”对技艺的苛求；机杼声声，呼唤对传统手工艺的振兴。",
+    "performerName": "陈文",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/cw.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=m0354i3iy15&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "用法律思维认识世界",
+    "sessionDesc": "从事律师行业近十年，热心公益。尝试着传递以法律思维认识世界并且改变生活的想法，让越来越多人善用法律武器保护自身权益。",
+    "performerName": "徐辉",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/xh.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=x03533a7kdx&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "融入生活中的儿童性教育",
+    "sessionDesc": "儿童性教育老师，拥有青少年性教育经验与儿童性教育公益创业经历。通过TEDxSuzhou的舞台，想要与观众分享儿童性教育中常被人们误解的事，为儿童性教育正名。",
+    "performerName": "胡佳威",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/hjw.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=w035524apdu&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "打破标签",
+    "sessionDesc": "人们似乎已经习惯了用标签来定义他人，而做为标签王的她却一直在尝试撕掉标签。王瀞颐，众人口中的“非诚勿扰15号女嘉宾”，敢于卸下名人光环，立志做最忙碌的家庭主妇，活出真实的自我。",
+    "performerName": "王瀞颐",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/wjy.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=p03569q79dm&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "和身体谈恋爱",
+    "sessionDesc": "16岁那年在台北中山堂的邂逅成为了一切的开始，从此与雲门相恋数十年。现在的雲门教室是梦想的聚集地，在这里，我们用舞蹈与自己的身体恋爱。",
+    "performerName": "温慧玟",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/whw.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=n0356nwwh7w&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "带着大爱做一件小事",
+    "sessionDesc": "两年前，Quin创建了社会企业ANA by KARMA，致力于将不丹编织妇女的纯手工围巾带给世界——当地女性获得一定经济收入，实现了自我价值，而她，也找到了自己的幸福秘籍。",
+    "performerName": "汤笑娟",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/txj.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=j0353hxfi1e&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "积极的悲观主义者",
+    "sessionDesc": "韩雪称自己“积极的悲观主义者”，不管以艺人身份参加真人秀，亦或以制作人身份制作电影。她始终对立看待，准备迎接“worst”，前路只有“better”。",
+    "performerName": "韩雪",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/hx.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=h0346bd9k3l&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "勇往直前, 做到极致",
+    "sessionDesc": "云上的时代并非所有人都能分一杯羹，身为科技女性，无限的热爱及学习的激情，是她由“销售女王”蜕变为“云计算一姐”的强大驱动力。",
+    "performerName": "顾逸南",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/gyn.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=j0353s6p4i4&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "分娩中的一切, 最终指向母乳喂养",
+    "sessionDesc": "在分娩和母乳喂养的路上，女性要跨越多少认知障碍？深谙孩子是未来的希望，她创办孕婴健康服务中心，支持女性，也滋养着每个参与者！",
+    "performerName": "宋克娜",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/skn.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=a0356leye2a&tiny=0&auto=0", "length": 120}
+}, {
+    "id": "the id of the talk",
+    eventId: "2016-deep-inside",
+    "name": "去执寻本, 探古知新",
+    "sessionDesc": "二十余年“向内”坚守，看时尚设计师把传统文化带向时尚之都。",
+    "performerName": "殷姗姗",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016di/yss.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=a0355wajrc2&tiny=0&auto=0", "length": 120}
+}];
+
+Array.prototype.push.apply(talks, deepInside);
+
 
 const sponsor = [{
     "id": "",
