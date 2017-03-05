@@ -2,6 +2,17 @@
  * Created by lishi on 17/1/26.
  */
 
+const nextEvent = {
+    eventId: '2017-time-will-see',
+    theme: "Deep Inside",
+    displayName: "2017 须臾",
+    type: 'yearly',
+    when: 1490418000,
+    where: 'Suzhou Cultural and Art Center',
+    audienceCount: 800,
+    banner:'http://xx.jpg'
+};
+
 const events = [{
     eventId: '2016-deep-inside',
     theme: "Deep Inside",
