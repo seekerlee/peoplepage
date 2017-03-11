@@ -4,13 +4,16 @@
 
 const nextEvent = {
     eventId: '2017-time-will-see',
-    theme: "Deep Inside",
-    displayName: "2017 须臾",
+    theme: "Time Will See",
+    themeCN: "须臾",
+    displayNameFull: 'TEDxSuzhou 大会"须臾"',
     type: 'yearly',
     when: 1490418000,
+    whenDisplay: "2017 年 3 月 25 日",
     where: 'Suzhou Cultural and Art Center',
     audienceCount: 800,
-    banner:'http://xx.jpg'
+    banner:'http://static.tedxsuzhou.com/images/talks/2017tws/banner-dark.jpg',
+    purchaseLink:'http://www.bagevent.com/event/250042'
 };
 
 const events = [{
@@ -1023,5 +1026,9 @@ module.exports = {
     GetActiveSponsor: function() {
         "use strict";
         return sponsor;
+    },
+    GetNextEvent: function() {
+        "use strict";
+        return nextEvent;
     }
 };

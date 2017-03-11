@@ -116,6 +116,11 @@ router.get('/sponsor', function(req, res, next) {
   res.send(JSON.stringify(result));
 });
 
+router.get('/next', function(req, res, next) {
+  var result = database.GetNextEvent();
+  res.send(JSON.stringify(result));
+});
+
 router.get('/people-page', function(req, res, next) {
   // 1. get my info from
   //    http://www.chuangxue.org/users/jade.json

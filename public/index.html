@@ -8,7 +8,7 @@
 	<meta charset=utf-8>
 	<title>TEDxSuzhou | Open Eyes &amp; Let Futures In</title>
 	<meta name=description content="TEDxSuzhou, TEDxSuzhou官网, 预见未来, offical site of tedxsuzhou">
-	<meta name=keywords content="TEDxSuzhou, 预见未来, predicting the future, TEDxSuzhou 官网, TEDxSuzhouWomen, 镜像">
+	<meta name=keywords content="TEDxSuzhou, 预见未来, predicting the future, time will see, TEDxSuzhou 官网, TEDxSuzhouWomen, 镜像">
 	<meta name=author content="GDG Suzhou">
 	<meta name=viewport content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href=images/favicon.ico>
@@ -90,6 +90,46 @@
 		</div>
 	</div>
 </div>
+
+<div id="next" v-if="hasNext" class="section bg-image-1 bg-fixed whitefont" style="">
+	<div class="container">
+		<h1 id="services" class="text-center title whitefont">{{event.themeCN}}<br>{{event.theme}}</h1>
+		<div class="space"></div>
+		<p class="text-center">{{event.displayNameFull}}<br>{{event.whenDisplay}}<br>
+			<a :href="event.purchaseLink" target="_blank" style="font-size: 2em;"><b>我要参加</b></a>
+		</p>
+		<div class="row counter" id="countdown">
+			<div class="col-md-2 count-digits col-md-offset-2 fadeInDown">
+				<p class="cddays">{{countDown.days}}</p>
+				<span class="lead">天</span>
+			</div>
+			<div class="col-md-2 count-digits  fadeInDown">
+				<p class="cdhours">{{countDown.hours}}</p>
+				<span class="lead">小时</span>
+			</div>
+			<div class="col-md-2 count-digits  fadeInDown">
+				<p class="cdminutes">{{countDown.minutes}}</p>
+				<span class="lead">分钟</span>
+			</div>
+			<div class="col-md-2 count-digits  fadeInDown">
+				<p class="cdseconds">{{countDown.seconds}}</p>
+				<span class="lead">秒</span>
+			</div>
+		</div>
+		<div class="row counter text-center" id="countdown2">
+			<span class="lead cddays">{{countDown.days}}</span>
+			<span class="lead">天</span>
+			<span class="lead cdhours">{{countDown.hours}}</span>
+			<span class="lead">小时</span>
+			<span class="lead cdminutes">{{countDown.minutes}}</span>
+			<span class="lead">分钟</span>
+			<span class="lead cdseconds">{{countDown.seconds}}</span>
+			<span class="lead">秒</span>
+		</div>
+		<!--h2 style="font-size: 2em;text-align: center;color:red;"><b>现场直播</b></h2-->
+	</div>
+</div>
+
 
 <div class=section id=speaker-section>
 	<div class=container>
@@ -294,7 +334,6 @@
 <script type=text/javascript src=http://static.tedxsuzhou.com/plugins/jquery.appear.js></script>
 <script type=text/javascript src=http://static.tedxsuzhou.com/plugins/owl/owl-carousel/owl.carousel.js></script>
 <script type=text/javascript src=javascripts/template.js></script>
-<script type=text/javascript src=javascripts/custom.js></script>
 <script type=text/javascript src=javascripts/event.js></script>
 <script type=text/javascript src=javascripts/jquery.magnific-popup.js></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -440,6 +479,81 @@
 		}
 	});
 
+	new Vue({
+		el: '#next',
+		data: {
+			event: {},
+			countDown:{
+				days:0,
+				hours:0,
+				minutes:0,
+				seconds:0
+			},
+			hasNext: false
+		},
+		mounted: function() {
+			//var el = this.$el;
+			var model = this;
+			show();
+
+			var get_time_difference = function () {
+				var earlierDate = new Date();
+				var laterDate = new Date(2017, 2, 25, 13, 0, 0, 0);
+				var oDiff = {};
+
+				//  Calculate Differences
+				var nTotalDiff = laterDate.getTime() - earlierDate.getTime();
+
+				oDiff.days = Math.floor(nTotalDiff / 1000 / 60 / 60 / 24);
+				nTotalDiff -= oDiff.days * 1000 * 60 * 60 * 24;
+
+				oDiff.hours = Math.floor(nTotalDiff / 1000 / 60 / 60);
+				nTotalDiff -= oDiff.hours * 1000 * 60 * 60;
+
+				oDiff.minutes = Math.floor(nTotalDiff / 1000 / 60);
+				nTotalDiff -= oDiff.minutes * 1000 * 60;
+
+				oDiff.seconds = Math.floor(nTotalDiff / 1000);
+				//  -------------------------------------------------------------------
+
+				//  Format Duration
+				//  -------------------------------------------------------------------
+				//  Format Hours
+				var hourtext = '00';
+				if (oDiff.days > 0){ hourtext = String(oDiff.days);}
+				if (hourtext.length == 1){hourtext = '0' + hourtext};
+
+				//  Format Minutes
+				var mintext = '00';
+				if (oDiff.minutes > 0){ mintext = String(oDiff.minutes);}
+				if (mintext.length == 1) { mintext = '0' + mintext };
+
+				//  Format Seconds
+				var sectext = '00';
+				if (oDiff.seconds > 0) { sectext = String(oDiff.seconds); }
+				if (sectext.length == 1) { sectext = '0' + sectext };
+
+				//  Set Duration
+				var sDuration = hourtext + ':' + mintext + ':' + sectext;
+				oDiff.duration = sDuration;
+				//  -------------------------------------------------------------------
+
+				return oDiff;
+			};
+
+			setInterval(function(){
+				model.countDown = get_time_difference();
+			}, 1000);
+			function show() {
+				$.get("/next", function(data){
+					var event = JSON.parse(data);
+					model.event = event;
+					var bPassed = event.when < (new Date()).getSeconds();
+					model.hasNext = !_.isEmpty(model.event) && !bPassed;
+				});
+			}
+		}
+	});
 	$('#org-vid').magnificPopup({
 		disableOn: 700,
 		type: 'iframe',
