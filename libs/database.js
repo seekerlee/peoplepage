@@ -1023,7 +1023,7 @@ const sponsor = [{
     "level": 1,
     "type": "",
     "active": true,
-    "link": "http://www.logitech.com.cn/zh-cn",
+    "link": "http://www.renogy.cn",
     "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/renogy.png"
 }, {
     "id": "",
@@ -1031,7 +1031,7 @@ const sponsor = [{
     "level": 1,
     "type": "",
     "active": true,
-    "link": "http://www.logitech.com.cn/zh-cn",
+    "link": "http://www.jslinezone.com",
     "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/line-zone.png"
 }];
 
