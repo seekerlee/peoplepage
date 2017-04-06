@@ -1009,6 +1009,30 @@ const sponsor = [{
     "type": "",
     "active": true,
     "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/jg.png"
+}, {
+    "id": "",
+    "name": "罗技",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.logitech.com.cn/zh-cn",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/luoji.png"
+}, {
+    "id": "",
+    "name": "renogy",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.logitech.com.cn/zh-cn",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/renogy.png"
+}, {
+    "id": "",
+    "name": "line-zone",
+    "level": 1,
+    "type": "",
+    "active": true,
+    "link": "http://www.logitech.com.cn/zh-cn",
+    "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/line-zone.png"
 }];
 
 
