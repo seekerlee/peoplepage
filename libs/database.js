@@ -876,7 +876,7 @@ const sponsor = [{
     "name": "",
     "level": 1,
     "type": "",
-    "active": true,
+    "active": false,
     "link": "http://www.suzart.cn/",
     "logoUrl": "http://static.tedxsuzhou.com/images/sponsor/jjm.png"
 }, {
