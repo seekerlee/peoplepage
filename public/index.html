@@ -390,7 +390,9 @@
 			function showSponsor() {
 				$.get("/sponsor", function(data){
 					var sponsors = JSON.parse(data);
-					model.sponsors = sponsors;
+					model.sponsors = sponsors.filter(function(sp){
+						return sp.active
+					});
 				});
 			}
 			var id = window.setInterval(function() {
