@@ -17,6 +17,22 @@ const nextEvent = {
 };
 
 const events = [{
+    eventId: '2017-time-will-see',
+    theme: "Time Will See",
+    displayName: "2017 须臾",
+    type: 'yearly',
+    when: 1490418000,
+    where: 'Suzhou Cultural and Art Center',
+    audienceCount: 800
+}, {
+    eventId: '2016-eXplore',
+    theme: "eXplore",
+    displayName: "2016 eXplore",
+    type: 'youth',
+    when: 121212121,
+    where: 'Suzhou Cultural and Art Center',
+    audienceCount: 500
+}, {
     eventId: '2016-deep-inside',
     theme: "Deep Inside",
     displayName: "2016 探寻真我",
@@ -782,7 +798,213 @@ var deepInside=[{
     "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=a0355wajrc2&tiny=0&auto=0", "length": 120}
 }];
 
+var timeWillSee = [{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "匠心",
+    "sessionDesc": "古代匠人因拥有高超技艺，古代中国从来都是尊重的。现代匠人不单掌握记忆，更需要拥有记忆。思考老祖宗的造物技术，思考如何对传统文化的继承。",
+    "performerName": "阮仪三",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/阮仪三现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=e0527w3zlfp&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "爱重来",
+    "sessionDesc": "当我们老了，落单了。怎么办？需要重来的爱。爱重来的路难走，需要关注、尊重、理解。爱不再是得到，更是考虑付出，付出是一种幸福。",
+    "performerName": "徐丽莉",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/徐丽莉现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=y0509a7ggb2&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "我还真得活着吗",
+    "sessionDesc": "生死面前，没有人持有所谓的标准答案。没有人的答案可以一成不变，我们对它一定有自己的解读，所以一起来叩问生死，这件事一定会是一件被时间祝福的事。",
+    "performerName": "三七",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/三七现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=c05093m0lbp&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "时间就是一切",
+    "sessionDesc": "我希望大家能够真正理解时间，能够处理好社会时间和生物时间之间的冲突。不光要工作，也要有一个健康身体。有一句话说得好，就是习大大的：“不要熬夜。”",
+    "performerName": "王晗",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/王晗现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=c0510a3xaly&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "3D画背后的故事",
+    "sessionDesc": "我不能改变什么，至少我可以为你画张画；我不能给予你什么，至少我可以给予你尊重。",
+    "performerName": "齐兴华",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/齐兴华现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=x0517wbzrzr&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "看不见的产品情绪",
+    "sessionDesc": "一句话，三分内容七分情绪。规划情绪是一种工作方式；解读情绪是一种认知方式。寻找合适自我的方式去疏导自己，让我们更好地爱自己、爱世界。",
+    "performerName": "袁泽铭",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/袁泽铭现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=c05173heg2t&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "如何培养成长型思维",
+    "sessionDesc": "吸烟有益于身体健康吗？初中生谈恋爱到底好不好？……生活中的很多细节已经反映出一个问题：不少人的机械式思维根深蒂固。我们该如何从教条的思维定式中解脱，激活大脑的潜能？并在成长中创造属于自己的、完整的、有逻辑论证的思维呢？",
+    "performerName": "魏宇",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/魏宇现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=z0522ldw73t&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "孩子是如何感受到父母的爱",
+    "sessionDesc": "Tears do not mean we are weak, but mean we are young. Children have magic. If you treated ue as angles, we should bring you a pradise.",
+    "performerName": "戴之菲",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/戴之菲现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=w0509z5o5rg&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "重新发现历史",
+    "sessionDesc": "The territory is a palimpsest. Preserving historic landscapes keeps the memory. Re-imagining historic landscapes inspires the future.",
+    "performerName": "Christian Nolf",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/Christian Nolf现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=r0509wxnkez&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "言语的温柔力量",
+    "sessionDesc": "感动、温暖的话语是赠予世界的珍贵礼物。身边的亲人，还是拥有短暂交流的陌生人，因温柔否认言语受惠。其实受惠最多的是你自己。",
+    "performerName": "潘月琪",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/潘月琪现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=l0509vptnco&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "眼见不为实",
+    "sessionDesc": "首先定一个小目标，比如通过自动驾驶技术将汽车的伤亡率降低100倍。",
+    "performerName": "李一帆",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/李一帆现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=e0509dcwfaa&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2017-time-will-see",
+    "name": "失控的网络暴力",
+    "sessionDesc": "在未来，我们每个人都有15分钟的成名时间；在未来，每个人相应地都有可能会“被”网络暴力15分钟。",
+    "performerName": "周西",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2017tws/周西现场.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=v0509xbpw6p&tiny=0&auto=0", "length": 120}
+}];
+
+var eXplore = [{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "乐计划：慈善的动力是什么",
+    "sessionDesc": "To accomplish something great, first narrow from the bottom of the funnel and you’ll find that there are unlimited possibilities to your search for meaning. ",
+    "performerName": "韩心怡",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/韩心怡大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=p0378wkihrm&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "探索职业与爱好",
+    "sessionDesc": " 与上一代不同的我们，在工作上有太多太多的选择。我们想选择一份自己真心喜欢的职业却因现实问题而担心。我想告诉大家，去做吧，因为做自己喜欢的事就是幸福。",
+    "performerName": "张自灵",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/张自灵大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=e03802jns77&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "社群联系有多重要",
+    "sessionDesc": "When we face challenges, we should not give up. More importantly, to take the opportunity and helps from the neighborhood. That's how I transform pain into something beautiful.",
+    "performerName": "Evrim",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/Evrim大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=a03803y1blj&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "你不了解的摄影蒙太奇",
+    "sessionDesc": "照片胜过千言万语，确实是这样的。它能记录下文字无法描述的瞬间。摄影更是探索更深层次主题的新语言。通过摄影，我们可以用眼睛重新管着这世界的每一分每一秒。",
+    "performerName": "王朝焜",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/王朝焜大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=z038097h3e4&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "每个人都是一件艺术品",
+    "sessionDesc": "没有任何人的人生是空虚的，毫无意义的。那些从我们身边溜走的时光，和在我们生活当中留下的印记，都值得去记录。而我们每个人，都是艺术家。",
+    "performerName": "袁慧慧",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/袁慧慧大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=d0385x9ryeo&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "探索世界",
+    "sessionDesc": "The mystery of universe will only come clear if we take good care of our home planet. Only then will we truly be able to explore the universe.",
+    "performerName": "Thijs Kouwenhoven",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/Kouwenhoven大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=v03819e8ran&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "思维的比拼",
+    "sessionDesc": "辩论表面上看似是语言的较量，背后却是两方思维的比拼。一步步思考、推论，最后得出观点。辩论性思维则让我们尽可能从多角度、严密、辩证看待问题。",
+    "performerName": "陈国坤",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/陈国坤大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=d0382dhaudi&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "无需改变，你就是独一无二",
+    "sessionDesc": "当你不知道自己为什么发掘这些东西的时候，你要想，世界上有那么多人，在这些你面临的机会前，为什么只有你要被选中。当你发现了这些之后，你就会得到这个问题的答案。",
+    "performerName": "金禧",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/金禧大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=k0383dyed0x&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "八千里的自行车之旅",
+    "sessionDesc": "We ride bike to travel from France to China. It was challenging and harsh. But it's the moments with people we never met and helps from those strangers make this experience so meaningful. ",
+    "performerName": "Waxin Pierre-Antoine and Édouard",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/Waxin%20Pierre-Antoine%20and%20Édouard大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=p0385tb62m2&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "非诉讼律师的平衡法则",
+    "sessionDesc": "我们大家的工作生活中，总不可避免遇到众多难题，看似非此即彼，不可调和，其实更有可能藏着一个平衡的支点。",
+    "performerName": "张海燕",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/张海燕大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=y03811gqy2v&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "找到幸福爱情",
+    "sessionDesc": "放弃韩剧情节的浪漫幻想，多一点主动。去恋爱吧，找寻那个你喜欢并让你舒服的人，找到属于你的“爱情故事”，因为每一段恋爱都会让你更好。",
+    "performerName": "吴岱妮",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/吴岱妮大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=p0383e54yuw&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "如何进行创造性学习",
+    "sessionDesc": "If you understand computational thinking and know how to program, you will also be able to understand a new way of thinking and create things that change the future.",
+    "performerName": "梁海宁",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/梁海宁大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=a0382y3wnxz&tiny=0&auto=0", "length": 120}
+},{
+    "id": "the id of the talk",
+    eventId: "2016-eXplore",
+    "name": "未来科技，虚拟还是现实？",
+    "sessionDesc": "未来世界是现实还是虚拟？未来科技是把人类变成钢铁侠还是让人类把自己想成钢铁侠？",
+    "performerName": "吕骋",
+    "coverImg": "http://static.tedxsuzhou.com/images/talks/2016xpl/吕骋大会.jpg",
+    "video": {"type": "qq", "url": "https://v.qq.com/iframe/player.html?vid=h0386djlwqh&tiny=0&auto=0", "length": 120}
+}]
+
 Array.prototype.push.apply(talks, deepInside);
+Array.prototype.push.apply(talks, timeWillSee);
+Array.prototype.push.apply(talks, eXplore);
 
 
 const sponsor = [{
