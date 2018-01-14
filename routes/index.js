@@ -141,7 +141,7 @@ router.get('/people/team', function(req, res, next) {
       var userJson = users[key];
       if(badgeFilterGen(100)(userJson)) {
 
-        userJson.avatar128 = config.discourseRoot + userJson.avatar_template.replace("{size}", "256");
+        userJson.avatar128 = 'http://static.tedxsuzhou.com' + userJson.avatar_template;
         team.push(userJson);
       }
     }

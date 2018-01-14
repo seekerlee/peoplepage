@@ -1,10 +1,4 @@
-"use strict";
-
-var querystring = require('querystring');
-var request = require('request');
-var config = require("../libs/config.js");
-
-var userDetails = {
+{
     "carina_ding": {
         "id": 12,
         "name": "Carina 丁澄澄",
@@ -717,8 +711,4 @@ var userDetails = {
         "email": "tsaicici@tedxsuzhou.com",
         "title": "社区主管"
     }
-};
-var exportV = {userDetails : userDetails};
-
-
-module.exports = exportV;
+}

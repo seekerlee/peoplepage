@@ -1,15 +1,9 @@
-"use strict";
-
-var querystring = require('querystring');
-var request = require('request');
-var config = require("../libs/config.js");
-
-var userDetails = {
+{
     "carina_ding": {
         "id": 12,
         "name": "Carina 丁澄澄",
         "username": "carina_ding",
-        "avatar_template": "/images/avatar/carina_ding.png",
+        "avatar_template": "/user_avatar/chuangxue.org/carina_ding/{size}/531_1.png",
         "bio": "辅导人数150+\n世界500强公司讲师\n国际英文演讲俱乐部资深会员\n热爱旅游  羽毛球\n",
         "badges": [
             {
@@ -26,7 +20,7 @@ var userDetails = {
         "id": 17,
         "name": "李昕",
         "username": "Cloe",
-        "avatar_template": "/images/avatar/Cloe.png",
+        "avatar_template": "/user_avatar/chuangxue.org/cloe/{size}/370_1.png",
         "card_background": "/uploads/default/original/1X/7eb49d5fe40ba370f88f4a045a807e0f5e427c16.jpg",
         "bio": "爱吃，爱玩，爱公益，射手座。作为CPT（Community Parter Team)头目，和团队伙伴们一同致力于为TEDxSuzhou的观众提供更好的活动体验，为合作伙伴提供一个更广阔的展示与互动的平台。",
         "badges": [
@@ -46,7 +40,7 @@ var userDetails = {
         "id": 7,
         "name": "Lisa Qin",
         "username": "LisaQ",
-        "avatar_template": "/images/avatar/LisaQ.png",
+        "avatar_template": "/user_avatar/chuangxue.org/lisaq/{size}/29_1.png",
         "bio": "巨蟹女，关注创新、关注学习与人才发展的可持续性, 组织行为。2014年发起TEDxSuzhouWomen, 喜欢冒险旅行，哲学思考，心理洞察，欣赏艺术。",
         "badges": [
             {
@@ -81,7 +75,7 @@ var userDetails = {
         "id": 2,
         "name": "Jade",
         "username": "jade",
-        "avatar_template": "/images/avatar/jade.png",
+        "avatar_template": "/user_avatar/chuangxue.org/jade/{size}/16_1.png",
         "card_background": "/uploads/default/original/1X/da78c48921c07e08757a23ab7c8646300551c485.jpg",
         "bio": "一个未来学习者，始终保持好奇心，热爱科技、教育，认为TEDx是未来学习的最好实践。",
         "website": "http://tedxsuzhou.com",
@@ -111,7 +105,7 @@ var userDetails = {
         "id": 31,
         "name": "毛惠Coco Mao",
         "username": "maohuicoco",
-        "avatar_template": "/images/avatar/maohuicoco.png",
+        "avatar_template": "/user_avatar/chuangxue.org/maohuicoco/{size}/405_1.png",
         "bio": "TEDxSuzhou演讲人助理。苏州大学会计学在读，“外研社”杯英语演讲大赛国奖，2015APEC峰会中国青年代表。曾公派赴哈佛学习。不能更典型水瓶座，对真善美永保热忱。",
         "badges": [
             {
@@ -132,7 +126,7 @@ var userDetails = {
         "id": 40,
         "name": "Leo Zhao",
         "username": "Leo",
-        "avatar_template": "/images/avatar/Leo.png",
+        "avatar_template": "/user_avatar/chuangxue.org/leo/{size}/410_1.png",
         "bio": "西交利物浦大学 城市规划与设计在读研究生一枚 爱好国画、摄影、设计、阅读以及视频编排制作",
         "badges": [
             {
@@ -152,7 +146,7 @@ var userDetails = {
         "id": 19,
         "name": "Matthew Chen",
         "username": "maschenxi",
-        "avatar_template": "/images/avatar/maschenxi.png",
+        "avatar_template": "/user_avatar/chuangxue.org/maschenxi/{size}/346_1.png",
         "card_background": "/uploads/default/original/1X/4874138bacc75ccac559843975d4a5c632a17a52.jpeg",
         "bio": "天秤座，逻辑控，不知何时起对于生活产生了这样一种理念\"to live is to see this world\"。目前深耕于制造业，虽谈不上不喜欢，但深信制造业的价值被这个膨胀的社会所忽视。",
         "badges": [
@@ -179,7 +173,7 @@ var userDetails = {
         "id": 16,
         "name": "Liana Liang",
         "username": "Liana",
-        "avatar_template": "/images/avatar/Liana.png",
+        "avatar_template": "/user_avatar/chuangxue.org/liana/{size}/529_1.png",
         "bio": "HR，热爱教育，社会公益与组织人力发展，关注女性及性少数的发展。",
         "badges": [
             {
@@ -210,7 +204,7 @@ var userDetails = {
         "id": 10,
         "name": "Sunny Pan",
         "username": "sunny_pan",
-        "avatar_template": "/images/avatar/sunny_pan.png",
+        "avatar_template": "/user_avatar/chuangxue.org/sunny_pan/{size}/301_1.png",
         "bio": "TEDxSuzhou团队管理总监，营销学博士，擅长数据分析和心理学，禅修推动者和修习者，致力于通过商业手段解决社会问题",
         "badges": [
             {
@@ -234,7 +228,7 @@ var userDetails = {
         "id": 6,
         "name": "Wensi Zhang",
         "username": "Wensi",
-        "avatar_template": "/images/avatar/Wensi.png",
+        "avatar_template": "/user_avatar/chuangxue.org/wensi/{size}/349_1.png",
         "bio": "爱设计且爱自由的外星人幸运地在包容心巨大的TEDxSuzhou找到了栖身之所。",
         "badges": [
             {
@@ -258,7 +252,7 @@ var userDetails = {
         "id": 28,
         "name": "Alex He",
         "username": "Alex",
-        "avatar_template": "/images/avatar/Alex.png",
+        "avatar_template": "/user_avatar/chuangxue.org/alex/{size}/355_1.png",
         "bio": "TED OTP项目志愿者，热衷于MOOC学习，了解新鲜事物。爱好阅读，徒步运动，平时有空也会看看美剧，美式脱口秀。玩玩桌游。",
         "badges": [
             {
@@ -284,7 +278,7 @@ var userDetails = {
         "id": 11,
         "name": "赵博",
         "username": "alan.zhao",
-        "avatar_template": "/images/avatar/alan.zhao.png",
+        "avatar_template": "/user_avatar/chuangxue.org/alan.zhao/{size}/396_1.png",
         "bio": "世界那么大，人生那么短，令自己处于开心的状态，选择一个不累的生活态度吧!",
         "badges": [
             {
@@ -310,7 +304,7 @@ var userDetails = {
         "id": 43,
         "name": "刘鹏",
         "username": "FrancisLiu",
-        "avatar_template": "/images/avatar/FrancisLiu.png",
+        "avatar_template": "/user_avatar/chuangxue.org/francisliu/{size}/382_1.png",
         "bio": "EHS工程师，环保主义实践者，美食狂热爱好者，爱旅行，爱潜水，爱这个枝繁叶茂的美好世界，世界那么大，定要好好地去看看！",
         "badges": [
             {
@@ -328,7 +322,7 @@ var userDetails = {
         "id": 51,
         "name": "Ziheng Zhang",
         "username": "ziheng.zhang",
-        "avatar_template": "/images/avatar/ziheng.zhang.png",
+        "avatar_template": "/user_avatar/chuangxue.org/ziheng.zhang/{size}/418_1.png",
         "bio": "西交利物浦大二计算机专业学生，热爱生活，热爱TED，希望可以通过TEDxYouth的平台传播出更多有价值的思想！",
         "badges": [
             {
@@ -349,7 +343,7 @@ var userDetails = {
         "id": 44,
         "name": "Jessica Jiang",
         "username": "JessicaJ",
-        "avatar_template": "/images/avatar/JessicaJ.png",
+        "avatar_template": "/user_avatar/chuangxue.org/jessicaj/{size}/392_1.png",
         "bio": "爱书爱旅行爱音乐剧。身处俗世，心系诗和远方。",
         "badges": [
             {
@@ -366,7 +360,7 @@ var userDetails = {
         "id": 38,
         "name": "夏仲文 Aegean Xia",
         "username": "aegean_xia",
-        "avatar_template": "/images/avatar/aegean_xia.png",
+        "avatar_template": "/user_avatar/chuangxue.org/aegean_xia/{size}/377_1.png",
         "bio": "TEDxSuzhou物料管理和国际组成员，曾在挪威就读工业物流理学硕士学位，致力于本地海归社区的发展。高级企业风险内控师，热爱瑜伽、旅游",
         "badges": [
             {
@@ -384,7 +378,7 @@ var userDetails = {
         "id": 32,
         "name": "陈宇哲 Evan ",
         "username": "a369369",
-        "avatar_template": "/images/avatar/a369369.png",
+        "avatar_template": "/user_avatar/chuangxue.org/a369369/{size}/336_1.png",
         "bio": "主修给排水科学与工程专业。大二曾创办并运营针对大学生的“璞真青年游学营”。喜欢游泳，旅行，看电影，对未来充满希望,希望每天都生活的多姿多彩。\n",
         "badges": [
             {
@@ -403,7 +397,7 @@ var userDetails = {
         "id": 49,
         "name": "陆晓曈Lulia Lu",
         "username": "lulia",
-        "avatar_template": "/images/avatar/lulia.png",
+        "avatar_template": "/user_avatar/chuangxue.org/lulia/{size}/426_1.png",
         "bio": "苏州大学信息资源管理专业二年级，文字上的杂食动物，图像里的素食主义。正在关注亚文化领域，努力做出一条与众不同的小裙子。",
         "badges": [
             {
@@ -427,7 +421,7 @@ var userDetails = {
         "id": 48,
         "name": "Alice Yu",
         "username": "Alice",
-        "avatar_template": "/images/avatar/Alice.png",
+        "avatar_template": "/user_avatar/chuangxue.org/alice/{size}/411_1.png",
         "bio": "专注未来活在当下的理想主义现实者, 游走于理性和感性中的自由思考者, 践行纳新融旧的乐活传播者",
         "badges": [
             {
@@ -447,7 +441,7 @@ var userDetails = {
         "id": 34,
         "name": "Coney Sun",
         "username": "Coney",
-        "avatar_template": "/images/avatar/Coney.png",
+        "avatar_template": "/user_avatar/chuangxue.org/coney/{size}/338_1.png",
         "bio": "热爱旅行，公益与分享。在外企从事人力资源工作。",
         "badges": [
             {
@@ -464,7 +458,7 @@ var userDetails = {
         "id": 22,
         "name": "Flora Pang",
         "username": "Flora",
-        "avatar_template": "/images/avatar/Flora.png",
+        "avatar_template": "/user_avatar/chuangxue.org/flora/{size}/333_1.png",
         "bio": "外企HR，人力资源管理师\n爱旅游美食\n喜欢用创新思维点亮生活 \n\n",
         "badges": [
             {
@@ -481,7 +475,7 @@ var userDetails = {
         "id": 33,
         "name": "吴启梦",
         "username": "SherryWoo",
-        "avatar_template": "/images/avatar/SherryWoo.png",
+        "avatar_template": "/user_avatar/chuangxue.org/sherrywoo/{size}/354_1.png",
         "bio": "TEDxSuzhou市场助理，曾在美国就读会计及市场营销双学位，热爱电影、原声配乐及摄影。",
         "badges": [
             {
@@ -498,7 +492,7 @@ var userDetails = {
         "id": 50,
         "name": "Fangyu Wu",
         "username": "fangyu",
-        "avatar_template": "/images/avatar/fangyu.png",
+        "avatar_template": "/user_avatar/chuangxue.org/fangyu/{size}/417_1.png",
         "bio": "励志成为一名优秀的程序媛同时也是TEDxYouth@Suzhou策展人，我相信青年的力量是无穷的，我们可以改变世界！",
         "badges": [
             {
@@ -519,7 +513,7 @@ var userDetails = {
         "id": 27,
         "name": "董达",
         "username": "dongda",
-        "avatar_template": "/images/avatar/dongda.png",
+        "avatar_template": "/user_avatar/chuangxue.org/dongda/{size}/406_1.png",
         "bio": "拥有一颗好奇心; 在TEDxSuzhou, 同大家一起知行合一，体会分享之美；",
         "badges": [
             {
@@ -538,7 +532,7 @@ var userDetails = {
         "id": 37,
         "name": "Sheldon Tang",
         "username": "Sheldon",
-        "avatar_template": "/images/avatar/Sheldon.png",
+        "avatar_template": "/user_avatar/chuangxue.org/sheldon/{size}/351_1.png",
         "bio": "人力资源管理专业二年级在读，粗通摄影，没事踢踢球。",
         "badges": [
             {
@@ -558,7 +552,7 @@ var userDetails = {
         "id": 36,
         "name": "余康睿",
         "username": "Gary",
-        "avatar_template": "/images/avatar/Gary.png",
+        "avatar_template": "/user_avatar/chuangxue.org/gary/{size}/402_1.png",
         "bio": "TEDxSuzhou 设计师\n\n设计学硕士，主修视觉传达设计和城市景观设计专业。因为对诸多领域有所了解，所以追求的是爱好广泛和体验多元的生活。\n",
         "badges": [
             {
@@ -577,7 +571,7 @@ var userDetails = {
         "id": 35,
         "name": "Lucy 陈现在",
         "username": "Lucy",
-        "avatar_template": "/images/avatar/Lucy.png",
+        "avatar_template": "/user_avatar/chuangxue.org/lucy/{size}/344_1.png",
         "card_background": "/uploads/default/original/1X/048bdf9b8546361ae4fcc5df88ab57273888f136.jpeg",
         "bio": "不增不减，慢慢儿的，活在当下",
         "badges": [
@@ -596,7 +590,7 @@ var userDetails = {
         "id": 30,
         "name": "Jacky Gu",
         "username": "Jackygu",
-        "avatar_template": "/images/avatar/Jackygu.png",
+        "avatar_template": "/user_avatar/chuangxue.org/jackygu/{size}/335_1.png",
         "bio": "\nTEDxSuzhou团队管理中负责流程管理，外企从事物流管理工作，同时经营着一家苏帮菜馆，励志把苏帮菜做到极致。爱吃，爱聊，爱生活，这就是我。",
         "badges": [
             {
@@ -616,7 +610,7 @@ var userDetails = {
         "id": 24,
         "name": "Cynthia Zheng",
         "username": "Cynthia",
-        "avatar_template": "/images/avatar/Cynthia.png",
+        "avatar_template": "/user_avatar/chuangxue.org/cynthia/{size}/403_1.png",
         "bio": "一名在自我认知和探索的路上探寻着的普通人,一个想给这个世界传递一份爱的人,一个对世界充满了好奇的人.\n目前是TedxSUZHOU的coach,为社区成员提供公益教练服务.\n",
         "badges": [
             {
@@ -636,7 +630,7 @@ var userDetails = {
         "id": 25,
         "name": "Ryan严燕青",
         "username": "RyanYan",
-        "avatar_template": "/images/avatar/RyanYan.png",
+        "avatar_template": "/user_avatar/chuangxue.org/ryanyan/{size}/401_1.png",
         "bio": "作为TEDxSuzhou Operation Team头目，致力于提高TEDx活动的参与感。目前在国内某大数据公司负责市场，热爱新鲜事物，坚持读书与慢跑，希望成为一个深刻而有趣的人。",
         "badges": [
             {
@@ -653,7 +647,7 @@ var userDetails = {
         "id": 41,
         "name": "Melody Li",
         "username": "MelodyLi",
-        "avatar_template": "/images/avatar/MelodyLi.png",
+        "avatar_template": "/user_avatar/chuangxue.org/melodyli/{size}/381_1.png",
         "bio": "和君商学院学员，新能源行业Salesforce系统顾问兼项目推广人，业余爱好：阅读、旅游。",
         "badges": [
             {
@@ -672,7 +666,7 @@ var userDetails = {
         "id": 9,
         "name": "张雉浪",
         "username": "George",
-        "avatar_template": "/images/avatar/George.png",
+        "avatar_template": "/user_avatar/chuangxue.org/george/{size}/386_1.png",
         "card_background": "/uploads/default/original/1X/530d7b379729f5f2e91456b02c7a1442678f0bb8.jpg",
         "bio": "喜欢做公益，创业者，CPT（Community Parter Team）主管，和团队伙伴为TEDxSuzhou的每次活动举办提供坚强的后盾，打造基于本地的全球化社区。",
         "badges": [
@@ -692,7 +686,7 @@ var userDetails = {
         "id": 39,
         "name": "Cici Tsai",
         "username": "CiciTsai",
-        "avatar_template": "/images/avatar/CiciTsai.png",
+        "avatar_template": "/user_avatar/chuangxue.org/cicitsai/{size}/356_1.png",
         "card_background": "/uploads/default/original/1X/ad1547ab6ed55a055f136d44e97fd7a45a2246bf.jpg",
         "bio": "TEDxSuzhou 社区主管（社区合作伙伴组）社区赞助商接洽以及关系维护。 \n射手座，热爱生活，积极向上。立志做个小太阳，照亮身边的小伙伴。\n同时，也是 GDG Suzhou 组织者之一。( GDG＝Google Developer Group )",
         "badges": [
@@ -717,8 +711,4 @@ var userDetails = {
         "email": "tsaicici@tedxsuzhou.com",
         "title": "社区主管"
     }
-};
-var exportV = {userDetails : userDetails};
-
-
-module.exports = exportV;
+}
